@@ -72,11 +72,28 @@
 <node TEXT="Groovy" ID="ID_587897482" CREATED="1399414107526" MODIFIED="1399414168755">
 <node TEXT="DSL" ID="ID_936806254" CREATED="1399414171063" MODIFIED="1399414173345"/>
 </node>
+<node TEXT="Lazybones" ID="ID_1080509491" CREATED="1399418543129" MODIFIED="1399418547858">
+<node TEXT="Templates (mvn archetypes)" ID="ID_1366284119" CREATED="1399418549889" MODIFIED="1399418560021">
+<node TEXT="lazybones create dropwizard 0.2 whatshappening" ID="ID_1543319919" CREATED="1399418872961" MODIFIED="1399418872961"/>
+</node>
+</node>
 </node>
 </node>
 <node TEXT="Para esta presentacion" POSITION="right" ID="ID_557388051" CREATED="1399414213375" MODIFIED="1399414220503">
 <edge COLOR="#00ffff"/>
 <node TEXT="http://berteh.github.io/mindslide/" ID="ID_1763940128" CREATED="1399414289174" MODIFIED="1399414289174" LINK="http://berteh.github.io/mindslide/"/>
+<node TEXT="Links" ID="ID_455134164" CREATED="1399418226541" MODIFIED="1399418228565">
+<node TEXT="DSL" ID="ID_271398696" CREATED="1399418289589" MODIFIED="1399418291602">
+<node TEXT="http://www.slideshare.net/glaforge/going-to-mars-with-groovy-domainspecific-languages" ID="ID_206664595" CREATED="1399418282734" MODIFIED="1399418282734" LINK="http://www.slideshare.net/glaforge/going-to-mars-with-groovy-domainspecific-languages"/>
+<node TEXT="http://groovy.codeplex.com/wikipage?title=Guillaume%20Laforge%27s%20%22Mars%20Rover%22%20tutorial%20on%20Groovy%20DSL%27s" ID="ID_1220513687" CREATED="1399418236600" MODIFIED="1399418236600" LINK="http://groovy.codeplex.com/wikipage?title=Guillaume%20Laforge%27s%20%22Mars%20Rover%22%20tutorial%20on%20Groovy%20DSL%27s"/>
+</node>
+<node TEXT="DropWizard" ID="ID_364115565" CREATED="1399418316409" MODIFIED="1399418320775">
+<node TEXT="https://dropwizard.github.io/dropwizard/getting-started.html" ID="ID_614949232" CREATED="1399418321594" MODIFIED="1399418321594" LINK="https://dropwizard.github.io/dropwizard/getting-started.html"/>
+<node TEXT="Example" ID="ID_735149264" CREATED="1399418442546" MODIFIED="1399418444877">
+<node TEXT="https://github.com/dropwizard/dropwizard/tree/master/dropwizard-example" ID="ID_1877420616" CREATED="1399418445477" MODIFIED="1399418445477" LINK="https://github.com/dropwizard/dropwizard/tree/master/dropwizard-example"/>
+</node>
+</node>
+</node>
 </node>
 </node>
 </map>
