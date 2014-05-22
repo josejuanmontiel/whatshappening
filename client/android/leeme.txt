@@ -1,0 +1,10 @@
+- Share and intents...
+	http://code.tutsplus.com/tutorials/android-sdk-implement-a-share-intent--mobile-8433
+	http://android-developers.blogspot.com.es/2012/02/share-with-intents.html
+
+- Mas intents de la doc oficial...
+	http://developer.android.com/training/sharing/send.html
+	https://developer.android.com/training/secure-file-sharing/share-file.html
+
+- Upload file from android...
+	http://androidexample.com/Upload_File_To_Server_-_Android_Example/index.php?view=article_discription&aid=83&aaid=106
