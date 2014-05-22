@@ -26,6 +26,9 @@ public class WhatsHappeningApplication extends Application<WhatsHappeningConfigu
     public void run(WhatsHappeningConfiguration configuration, Environment environment) {
 		final WhatsHappeningResource resource = new WhatsHappeningResource(configuration.getTemplate(),configuration.getDefaultName());
 	    environment.jersey().register(resource);
+		final WhatsHappeningFileResource resourceFile = new WhatsHappeningFileResource();
+	    environment.jersey().register(resourceFile);
+
 
 	    final TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
 	    environment.healthChecks().register("template", healthCheck);
