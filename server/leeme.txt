@@ -1,0 +1,31 @@
+lazybones create dropwizard example
+
+
+- http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+	mvn archetype:generate -DgroupId=com.accreativos.whatshappening -DartifactId=core -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+- https://dropwizard.github.io/dropwizard/getting-started.html#setting-up-maven
+	<properties>
+		<dropwizard.version>0.7.0</dropwizard.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+		    <groupId>io.dropwizard</groupId>
+		    <artifactId>dropwizard-core</artifactId>
+		    <version>${dropwizard.version}</version>
+		</dependency>
+	</dependencies>
+
+...
+
+- https://github.com/dropwizard/dropwizard/tree/master/dropwizard-example
+
+...
+
+- https://github.com/alexeypro/dropwizard-archetype
+
+...
+
+mvn package
+java -jar target/core-1.0-SNAPSHOT.jar server core.yml
