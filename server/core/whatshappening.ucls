@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="com.accreativos.whatshappening.resources.WhatsHappeningResource" project="core" 
+    file="/core/src/main/java/com/accreativos/whatshappening/resources/WhatsHappeningResource.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="149" width="224" x="397" y="334"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.accreativos.whatshappening.WhatsHappeningApplication" project="core" 
+    file="/core/src/main/java/com/accreativos/whatshappening/WhatsHappeningApplication.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="149" width="300" x="342" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.accreativos.whatshappening.health.TemplateHealthCheck" project="core" 
+    file="/core/src/main/java/com/accreativos/whatshappening/health/TemplateHealthCheck.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="113" width="177" x="899" y="334"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.accreativos.whatshappening.WhatsHappeningConfiguration" project="core" 
+    file="/core/src/main/java/com/accreativos/whatshappening/WhatsHappeningConfiguration.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="185" width="198" x="661" y="334"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.accreativos.whatshappening.core.Saying" project="core" 
+    file="/core/src/main/java/com/accreativos/whatshappening/core/Saying.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="495" y="622"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.accreativos.whatshappening.resources.WhatsHappeningFileResource" 
+    project="core" file="/core/src/main/java/com/accreativos/whatshappening/resources/WhatsHappeningFileResource.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="131" width="316" x="41" y="334"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.codahale.metrics.health.HealthCheck" project="core" 
+    file="/home/jose/.m2/repository/com/codahale/metrics/metrics-healthchecks/3.0.1/metrics-healthchecks-3.0.1.jar" 
+    binary="true" corner="BOTTOM_RIGHT">    
+    <position height="113" width="130" x="946" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="io.dropwizard.Configuration" project="core" 
+    file="/home/jose/.m2/repository/io/dropwizard/dropwizard-core/0.7.0/dropwizard-core-0.7.0.jar" binary="true" 
+    corner="BOTTOM_RIGHT">    
+    <position height="257" width="224" x="682" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="9">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </dependency>  
+  <dependency id="10">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </dependency>  
+  <generalization id="11">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="8"/>  
+  </generalization>  
+  <dependency id="12">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="13">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="14">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="5"/>  
+  </dependency>  
+  <generalization id="15">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
