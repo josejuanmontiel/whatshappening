@@ -1,0 +1,59 @@
+Pasos para construir dsl...
+	- XXXApplication.run
+		final XXXResource resource = new XXXResource(param1, param2);
+	    environment.jersey().register(resource);
+
+	    final XXXHealthCheck healthCheck = new XXXHealthCheck(param1);
+	    environment.healthChecks().register("template", healthCheck);
+
+	-> groovy
+		enviroment {
+			jersey {
+				XXXResource {
+					param1,
+					param2
+				}
+			}
+			healthChecks {
+				XXXHealthCheck {
+					param1
+				}	
+			}
+		}
+
+	- XXXApplication.run(XXXConfiguration)
+
+	-> groovy
+		XXXConfiguration que se construya dinamicamente del config.yml
+		
+	
+	- @Path("/hello-world")
+	  @Produces(MediaType.APPLICATION_JSON)
+	  public class WhatsHappeningResource {
+
+		private final String template;
+		private final String defaultName;
+		private final AtomicLong counter;
+
+		public WhatsHappeningResource(String template, String defaultName) {
+		    this.template = template;
+		    this.defaultName = defaultName;
+		    this.counter = new AtomicLong();
+		}
+
+		@GET
+		@Timed
+		public Saying sayHello(@QueryParam("name") Optional<String> name) {
+		    final String value = String.format(template, name.or(defaultName));
+		    return new Saying(counter.incrementAndGet(), value);
+		}
+
+	-> groovy
+		
+		JSON("/hello-world") {
+			sayHello("name") {
+				saying {
+					name;
+				}
+			}
+		}

@@ -62,19 +62,53 @@
 <edge COLOR="#00ff00"/>
 <node TEXT="WhatsHappening" ID="ID_1475508722" CREATED="1399413854060" MODIFIED="1399413859510">
 <node TEXT="https://github.com/josejuanmontiel/whatshappening" ID="ID_1814924623" CREATED="1399413890111" MODIFIED="1399413890111" LINK="https://github.com/josejuanmontiel/whatshappening"/>
-<node TEXT="Quieres medir como de rapido viaja una imagen en un momento determinado: derrota del Barca, Aguirre a la carrera..." ID="ID_1473556229" CREATED="1399413903764" MODIFIED="1399414077663"/>
+<node TEXT="Quieres medir como de rapido viaja una imagen en un momento determinado: derrota del Barca en Champins por el Atletico, Aguirre a la carrera, el realmadrid gana Champions..." ID="ID_1473556229" CREATED="1399413903764" MODIFIED="1401352370023"/>
 </node>
 </node>
 <node TEXT="Solucion" POSITION="right" ID="ID_1376484677" CREATED="1399414082864" MODIFIED="1399414087781">
 <edge COLOR="#ff00ff"/>
 <node TEXT="Tecnologia" ID="ID_1026697642" CREATED="1399414090782" MODIFIED="1399414097057">
-<node TEXT="Dropwizard" ID="ID_710779118" CREATED="1399414099350" MODIFIED="1399414105737"/>
-<node TEXT="Groovy" ID="ID_587897482" CREATED="1399414107526" MODIFIED="1399414168755">
-<node TEXT="DSL" ID="ID_936806254" CREATED="1399414171063" MODIFIED="1399414173345"/>
+<node TEXT="Dropwizard" ID="ID_710779118" CREATED="1399414099350" MODIFIED="1401368588790">
+<node TEXT="Pasos para el desarrollo" ID="ID_812672641" CREATED="1401368652569" MODIFIED="1401368660502">
+<node TEXT="Seguir lo indicado en:" ID="ID_766647821" CREATED="1401368661257" MODIFIED="1401368668191">
+<node ID="ID_479157407" CREATED="1401368672581" MODIFIED="1401368672581" LINK="https://dropwizard.github.io/dropwizard/getting-started.html"><richcontent TYPE="NODE">
+
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      https://dropwizard.github.io/dropwizard/getting-started.html
+    </p>
+  </body>
+</html>
+
+</richcontent>
+</node>
+</node>
+<node TEXT="Modelo de clases de ejemplo" ID="ID_1983584466" CREATED="1401368675993" MODIFIED="1401368681382">
+<node TEXT="" ID="ID_1450826167" CREATED="1401368682257" MODIFIED="1401368692460">
+<hook URI="WhatsHappeningModel.png" SIZE="0.57636887" NAME="ExternalObject"/>
+</node>
+</node>
+</node>
 </node>
 <node TEXT="Lazybones" ID="ID_1080509491" CREATED="1399418543129" MODIFIED="1399418547858">
 <node TEXT="Templates (mvn archetypes)" ID="ID_1366284119" CREATED="1399418549889" MODIFIED="1399418560021">
 <node TEXT="lazybones create dropwizard 0.2 whatshappening" ID="ID_1543319919" CREATED="1399418872961" MODIFIED="1399418872961"/>
+</node>
+</node>
+<node TEXT="Groovy" ID="ID_587897482" CREATED="1399414107526" MODIFIED="1399414168755">
+<node TEXT="DSL" ID="ID_936806254" CREATED="1399414171063" MODIFIED="1399414173345">
+<node TEXT="Primera cosa a DSLizar" ID="ID_964864542" CREATED="1401368719392" MODIFIED="1401368736525">
+<node TEXT="- XXXApplication.run&#xa;final XXXResource resource = new XXXResource(param1, param2);&#xa;    environment.jersey().register(resource);&#xa;&#xa;    final XXXHealthCheck healthCheck = new XXXHealthCheck(param1);&#xa;    environment.healthChecks().register(&quot;template&quot;, healthCheck);" ID="ID_1648690502" CREATED="1401368737112" MODIFIED="1401368738814"/>
+<node TEXT="enviroment {&#xa;jersey {&#xa;XXXResource {&#xa;param1,&#xa;param2&#xa;}&#xa;}&#xa;healthChecks {&#xa;XXXHealthCheck {&#xa;param1&#xa;}&#xa;}&#xa;}" ID="ID_1804378412" CREATED="1401368748216" MODIFIED="1401368750366"/>
+</node>
+<node TEXT="La configuracion que se coja directamente del fichero" ID="ID_1587663464" CREATED="1401368755048" MODIFIED="1401368763597">
+<node TEXT="config.yml y no sea necesario ... XXXApplication.run(XXXConfiguration)" ID="ID_825814261" CREATED="1401368772128" MODIFIED="1401368796757"/>
+</node>
+<node TEXT="Modelizar los rest (XXXResource) del estilo a ratpack" ID="ID_847041044" CREATED="1401368799224" MODIFIED="1401368832748"/>
 </node>
 </node>
 </node>
@@ -84,8 +118,11 @@
 <node TEXT="http://berteh.github.io/mindslide/" ID="ID_1763940128" CREATED="1399414289174" MODIFIED="1399414289174" LINK="http://berteh.github.io/mindslide/"/>
 <node TEXT="Links" ID="ID_455134164" CREATED="1399418226541" MODIFIED="1399418228565">
 <node TEXT="DSL" ID="ID_271398696" CREATED="1399418289589" MODIFIED="1399418291602">
+<node TEXT="http://groovy.codehaus.org/Writing+Domain-Specific+Languages" ID="ID_1291645919" CREATED="1401357661076" MODIFIED="1401357661076" LINK="http://groovy.codehaus.org/Writing+Domain-Specific+Languages"/>
+<node TEXT="Laforge" ID="ID_237005200" CREATED="1401368550265" MODIFIED="1401368559742">
 <node TEXT="http://www.slideshare.net/glaforge/going-to-mars-with-groovy-domainspecific-languages" ID="ID_206664595" CREATED="1399418282734" MODIFIED="1399418282734" LINK="http://www.slideshare.net/glaforge/going-to-mars-with-groovy-domainspecific-languages"/>
 <node TEXT="http://groovy.codeplex.com/wikipage?title=Guillaume%20Laforge%27s%20%22Mars%20Rover%22%20tutorial%20on%20Groovy%20DSL%27s" ID="ID_1220513687" CREATED="1399418236600" MODIFIED="1399418236600" LINK="http://groovy.codeplex.com/wikipage?title=Guillaume%20Laforge%27s%20%22Mars%20Rover%22%20tutorial%20on%20Groovy%20DSL%27s"/>
+</node>
 </node>
 <node TEXT="DropWizard" ID="ID_364115565" CREATED="1399418316409" MODIFIED="1399418320775">
 <node TEXT="https://dropwizard.github.io/dropwizard/getting-started.html" ID="ID_614949232" CREATED="1399418321594" MODIFIED="1399418321594" LINK="https://dropwizard.github.io/dropwizard/getting-started.html"/>
