@@ -1,2 +1,9 @@
+/server/core/.classpath
+/server/core/.project
+/server/core/.settings/org.eclipse.jdt.core.prefs
+/server/core/.settings/org.eclipse.m2e.core.prefs
+/server/.metadata
+/server/core/target/classes/com/accreativos/whatshappening/WhatsHappeningApplication.class
 /server/whatshappening/.gradle
 /server/whatshappening/build
+/server/core/target
