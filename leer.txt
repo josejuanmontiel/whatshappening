@@ -1,0 +1,52 @@
+Hola,
+
+a ver las fechas que se barajan son:
+	17 Junio - Si alguien o yo, tienen una charla preparada... 
+	finales de Junio - crossover con MadridJUG...
+	8 Julio - Si nadie tiene preparado algo el 17, entonces se retrasa y asi se anuncia tambien en MadridGUG
+
+lo que yo hable en su momento con era una charla tipo: "Como groovyzar dropwizard"
+
+El indice de la charla seria algo asi:	
+
+	- Presentacion y problema a resolver
+	- Como se hace con dropwizard
+		- https://dropwizard.github.io/dropwizard/getting-started.html
+	- Cliente Android para los servicios REST
+	- Como mejorarlo con un DSL para pasar de:
+
+		- XXXApplication.run
+		final XXXResource resource = new XXXResource(param1, param2);
+		    environment.jersey().register(resource);
+		    final XXXHealthCheck healthCheck = new XXXHealthCheck(param1);
+		    environment.healthChecks().register("template", healthCheck);
+
+		a
+
+			enviroment {
+				jersey {
+					XXXResource {
+						param1,
+						param2
+					}
+				}
+
+				healthChecks {
+					XXXHealthCheck {
+						param1
+					}
+				}
+			}
+
+		- configuracion que se coja directamente del fichero
+    		config.yml y no sea necesario ... XXXApplication.run(XXXConfiguration)
+
+		- Modelizar los rest (XXXResource) del estilo a ratpack
+
+Para los primeros puntos lo tengo mas o menos claro, pero como era de esperar por mi escaso conocimiento de groovy, lo que no tengo nada claro es lo del DSL, y mira que fui a la charla de: "Making Java APIs Groovy by Cédric Champeau", se me ve la coronilla en todo el centro del video, pero se me ha olvidao lo poco que me quedo.
+
+Si alguien pudiera darme el paso (ejemplo basico, volvere a ver el video) de como empezar... pues intento terminarla para el 17.
+
+¿Alguien me pasa un ejemplo de como DSL un API Java?
+
+Saludos.
