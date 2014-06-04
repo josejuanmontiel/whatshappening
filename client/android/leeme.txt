@@ -1,3 +1,14 @@
+- Android maven plugin
+	http://stand.spree.de/wiki_details_maven_archetypes
+		mvn archetype:generate \
+		  -DarchetypeArtifactId=android-quickstart \
+		  -DarchetypeGroupId=de.akquinet.android.archetypes \
+		  -DarchetypeVersion=1.0.11 \
+		  -DgroupId=com.accreativos \
+		  -DartifactId=whatshappening
+
+		mvn clean install android:deploy
+
 - Share and intents...
 	http://code.tutsplus.com/tutorials/android-sdk-implement-a-share-intent--mobile-8433
 	http://android-developers.blogspot.com.es/2012/02/share-with-intents.html
