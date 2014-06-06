@@ -1,3 +1,9 @@
+/client/android/whatshappening/.classpath
+/client/android/whatshappening/.project
+/client/android/whatshappening/.settings
+/client/android/whatshappening/bin
+/client/android/whatshappening/target
+/client/android/.metadata
 /server/core/.classpath
 /server/core/.project
 /server/core/.settings/org.eclipse.jdt.core.prefs

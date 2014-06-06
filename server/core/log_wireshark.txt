@@ -1,0 +1,74 @@
+POST /image/attached HTTP/1.1
+Host: 192.168.1.153:8080
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:29.0) Gecko/20100101 Firefox/29.0 Iceweasel/29.0.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: es-es,es;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Type: multipart/form-data; boundary=---------------------------12554089939350903581018924410
+Content-Length: 2006
+
+-----------------------------12554089939350903581018924410
+Content-Disposition: form-data; name="image"; filename="notas.txt"
+Content-Type: text/plain
+
+- Configurar hdmi automatico...
+.http://blog.sleeplessbeastie.eu/2013/01/07/how-to-automatically-set-up-external-monitor/
+.http://forum.kde.org/viewtopic.php?f=19&t=96537
+
+.http://charlesmcruz.wordpress.com/2012/01/22/ubuntu-11-10-automatic-hdmi-toggle-with-audio/
+.http://unix.stackexchange.com/questions/4489/a-tool-for-automatically-applying-randr-configuration-when-external-display-is-p
+.https://github.com/wertarbyte/autorandr
+
+- Configurar twitter para pidgin
+.https://developer.pidgin.im/wiki/ThirdPartyPlugins
+..https://code.google.com/p/microblog-purple/
+.To upgrade, please REMOVE "OldTwitterIM", then RE-ADD "TwitterIM" back
+
+- Configurar scanner trabajo Brother-MFC-9450CDN
+.- http://welcome.solutions.brother.com/bsc/public_s/id/linux/en/index.html
+..- http://welcome.solutions.brother.com/bsc/public_s/id/linux/en/instruction_scn1b.html
+..- http://welcome.solutions.brother.com/bsc/public_s/id/linux/en/instruction_scn3.html
+
+- Repositorio de claves tiene clave original del sistema y no la nueva clave de root...
+
+- icedove 
+.- junk functionality
+.- iceowl
+.- compartir calendario tecnilogica con cuenta de gmail
+
+- Revisar xscreensaver-command -lock (y ver como cambiarlo sin traer todo gnome)
+
+- Traer mas pdfs...
+
+* juniper 64 bits
+
+.echo | openssl s_client -connect vpnssl.globalia-corp.com:443 2>&1 |
+.      sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' |
+.      openssl x509 -outform der > ssl.crt
+
+.cd $HOME/.juniper_networks/network_connect
+.    ./ncui -h vpnssl.globalia-corp.com \
+..   -u 23266971X \
+.           -p globalia \
+..   -r Mac \
+.           -f ssl.crt
+
+- DONE
+.- Configurar el acceso al fs del movil con el cable: 0fce:0170
+
+-----------------------------12554089939350903581018924410
+Content-Disposition: form-data; name="submit"
+
+upload
+-----------------------------12554089939350903581018924410--
+HTTP/1.1 200 OK
+Date: Fri, 06 Jun 2014 00:00:06 GMT
+Content-Type: text/plain
+Transfer-Encoding: chunked
+
+24
+959cc23e-350a-4335-94e0-0726c3eaadd0
+0
+
+º
