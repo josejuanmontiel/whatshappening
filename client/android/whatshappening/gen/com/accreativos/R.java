@@ -37,6 +37,10 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int hello=0x7f050001;
         public static final int hello_world=0x7f050003;
+        public static final int task_cancelled=0x7f050006;
+        public static final int task_completed=0x7f050007;
+        public static final int task_starting=0x7f050004;
+        public static final int task_working=0x7f050005;
     }
     public static final class style {
         /** 
