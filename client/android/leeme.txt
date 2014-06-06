@@ -9,6 +9,27 @@
 
 		mvn clean install android:deploy
 
+- Crear SD
+	mksdcard 256M sdcard_dev.iso
+	On menu Run -> Run Configurations, click on Android Configuration on the left tree menu, click on tab Target on the right pane. 
+	You will see at the bottom: “Additional Emulator Commandline Options” and an Input/Edit box below:
+		-sdcard [sdcard location]
+
+- Remontar sistema de ficheros...
+	$./adb shell
+	$su
+	mount -o rw,remount rootfs /
+	chmod 777 /mnt/sdcard
+	exit
+
+- Mover ficheros a emulador android desde linea de comandos...
+	http://jimmithy.tumblr.com/post/5389920961/moving-files-to-the-android-emulator-via-command-line
+
+	adb push image.jpg /mnt/sdcard/
+
+
+
+
 - Share and intents...
 	http://code.tutsplus.com/tutorials/android-sdk-implement-a-share-intent--mobile-8433
 	http://android-developers.blogspot.com.es/2012/02/share-with-intents.html
@@ -19,3 +40,7 @@
 
 - Upload file from android...
 	http://androidexample.com/Upload_File_To_Server_-_Android_Example/index.php?view=article_discription&aid=83&aaid=106
+
+
+*** Libreria upload
+	https://github.com/alexbbb/android-upload-service
