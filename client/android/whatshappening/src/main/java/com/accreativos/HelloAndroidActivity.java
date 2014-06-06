@@ -1,9 +1,23 @@
 package com.accreativos;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import android.app.Activity;
+import android.content.ContentResolver;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.widget.Toast;
 
 public class HelloAndroidActivity extends Activity {
 
@@ -18,7 +32,7 @@ public class HelloAndroidActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+		setContentView(R.layout.activity_main);
 
 		Intent intent = getIntent();
 		Bundle extras = intent.getExtras();
@@ -41,12 +55,7 @@ public class HelloAndroidActivity extends Activity {
 					// Get binary bytes for encode
 					byte[] data = getBytesFromFile(is);
 
-					// base 64 encode for text transmission (HTTP)
-					byte[] encoded_data = Base64.encodeBase64(data);
-					String data_string = new String(encoded_data); // convert to
-																	// string
-
-					SendRequest(data_string);
+					doFileUpload("file1",data);
 
 					return;
 				} catch (Exception e)
@@ -62,53 +71,82 @@ public class HelloAndroidActivity extends Activity {
 
 	}
 
-	private void SendRequest(String data_string)
-
-
-		try
-		{
-			String xmldata = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
-					+ "<photo><photo>" + data_string
-					+ "</photo><caption>via android - " + new Date().toString()
-					+ "</caption></photo>";
-
-			// Create socket
-			String hostname = "192.168.1.152";
-			String path = "/image";
-			int port = 8080;
-			InetAddress addr = InetAddress.getByName(hostname);
-			Socket sock = new Socket(addr, port);
-
-			// Send header
-			BufferedWriter wr = new BufferedWriter(new OutputStreamWriter(
-					sock.getOutputStream(), "UTF-8"));
-			wr.write("POST " + path + " HTTP/1.1\r\n");
-			wr.write("Host: "+hostname+"\r\n");
-			wr.write("Content-Length: " + xmldata.length() + "\r\n");
-			wr.write("Content-Type: text/xml; charset=\"utf-8\"\r\n");
-			wr.write("Accept: text/xml\r\n");
-			wr.write("\r\n");
-
-			// Send data
-			wr.write(xmldata);
-			wr.flush();
-
-			// Response
-			BufferedReader rd = new BufferedReader(new InputStreamReader(
-					sock.getInputStream()));
-			String line;
-			while ((line = rd.readLine()) != null)
-			{
-				Log.v(this.getClass().getName(), line);
-			}
-
-		} catch (Exception e)
-		{
-			Log.e(this.getClass().getName(), "Upload failed", e);
-		}
-
+	private void writeMessage(String text) {
+		Context context = getApplicationContext();
+		int duration = Toast.LENGTH_LONG;
+		Toast toast = Toast.makeText(context, text, duration);
+		toast.show();
 	}
+	
+	private void doFileUpload(String existingFileName, byte[] buffer) {
 
+	    HttpURLConnection conn = null;
+	    DataOutputStream dos = null;
+	    DataInputStream inStream = null;
+	    String lineEnd = "\r\n";
+	    String twoHyphens = "--";
+	    String boundary = "*****";
+	    String urlString = "http://192.168.1.153:8080/image/attached";
+
+	    try {
+	    	writeMessage("Inicio...");
+	    	
+	        //------------------ CLIENT REQUEST
+	        // open a URL connection to the Servlet
+	        URL url = new URL(urlString);
+	        // Open a HTTP connection to the URL
+	        conn = (HttpURLConnection) url.openConnection();
+	        // Allow Inputs
+	        conn.setDoInput(true);
+	        // Allow Outputs
+	        conn.setDoOutput(true);
+	        // Don't use a cached copy.
+	        conn.setUseCaches(false);
+	        // Use a post method.
+	        conn.setRequestMethod("POST");
+	        conn.setRequestProperty("Connection", "Keep-Alive");
+	        conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + boundary);
+	        
+	        writeMessage("Empezamos a escribir...");
+	        
+	        dos = new DataOutputStream(conn.getOutputStream());
+	        dos.writeBytes(twoHyphens + boundary + lineEnd);
+	        dos.writeBytes("Content-Disposition: form-data; name=\"image\";filename=\"" + existingFileName + "\"" + lineEnd);
+	        dos.writeBytes(lineEnd);
+	        
+            dos.write(buffer, 0, buffer.length);
+
+	        // send multipart form data necesssary after file data...
+	        dos.writeBytes(lineEnd);
+	        dos.writeBytes(twoHyphens + boundary + twoHyphens + lineEnd);
+	        // close streams
+	        dos.flush();
+	        dos.close();
+	    } catch (MalformedURLException ex) {
+	    	writeMessage("error: " + ex.getMessage());
+	    } catch (IOException ioe) {
+	    	writeMessage("error: " + ioe.getMessage());
+	    }
+
+	    //------------------ read the SERVER RESPONSE
+	    try {
+
+	        inStream = new DataInputStream(conn.getInputStream());
+	        String str;
+
+	        while ((str = inStream.readLine()) != null) {
+
+	            Log.e("Debug", "Server Response " + str);
+
+	        }
+
+	        inStream.close();
+
+	    } catch (IOException ioex) {
+	        Log.e("Debug", "error: " + ioex.getMessage(), ioex);
+	    }
+	}
+	
 	public static byte[] getBytesFromFile(InputStream is)
 	{
 		try
