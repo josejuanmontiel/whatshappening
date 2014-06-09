@@ -1,3 +1,9 @@
 [submodule "slides/reveal.js"]
 	path = slides/reveal.js
 	url = https://github.com/hakimel/reveal.js.git
+[submodule "dsl/groovy-wizard"]
+	path = dsl/groovy-wizard
+	url = https://github.com/mariogarcia/groovy-wizard
+[submodule "client/android/android-upload-service"]
+	path = client/android/android-upload-service
+	url = https://github.com/alexbbb/android-upload-service.git
