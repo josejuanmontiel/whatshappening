@@ -58,6 +58,8 @@
 </li>
 <li>Solucion<a href="#/ID_1376484677" class="link subsection"> &#8628;</a>
 </li>
+<li>Para esta presentacion<a href="#/ID_557388051" class="link subsection"> &#8628;</a>
+</li>
 </ul>
 </section>
 <!--new subsection-->
@@ -68,6 +70,7 @@
 <li>@accreativos</li>
 <li>MadridGUG<a href="#/ID_1278479217" class="link subsection"> &#8628;</a>
 </li>
+<li>La increible ayuda de @marioggar</li>
 </ul>
 </section>
 <section class="content" id="ID_1278479217">
@@ -93,7 +96,7 @@
 <li>
 <a href="https://github.com/josejuanmontiel/whatshappening" class="link external">https://github.com/josejuanmontiel/whatshappening</a>
 </li>
-<li>Quieres medir como de rapido viaja una imagen en un momento determinado: derrota del Barca, Aguirre a la carrera...</li>
+<li>Quieres medir como de rapido viaja una imagen en un momento determinado: derrota del Barca en Champins por el Atletico, Aguirre a la carrera, el realmadrid gana Champions...</li>
 </ul>
 </section>
 </section>
@@ -102,22 +105,171 @@
 <section class="content" id="ID_1376484677">
 <h2>Solucion</h2>
 <ul>
-<li>Tecnologia<a href="#/ID_1026697642" class="link subsection"> &#8628;</a>
+<li>Cliente Android</li>
+<li>Dropwizard<a href="#/ID_710779118" class="link subsection"> &#8628;</a>
 </li>
-</ul>
-</section>
-<section class="content" id="ID_1026697642">
-<h3>Tecnologia</h3>
-<ul>
-<li>Dropwizard</li>
+<li>Lazybones<a href="#/ID_1080509491" class="link subsection"> &#8628;</a>
+</li>
 <li>Groovy<a href="#/ID_587897482" class="link subsection"> &#8628;</a>
 </li>
 </ul>
 </section>
-<section class="content" id="ID_587897482">
-<h4>Groovy</h4>
+<section class="content" id="ID_710779118">
+<h3>Dropwizard</h3>
 <ul>
-<li>DSL</li>
+<li>Pasos para el desarrollo<a href="#/ID_812672641" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_812672641">
+<h4>Pasos para el desarrollo</h4>
+<ul>
+<li>Seguir lo indicado en:<a href="#/ID_766647821" class="link subsection"> &#8628;</a>
+</li>
+<li>Modelo de clases de ejemplo<a href="#/ID_1983584466" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_766647821">
+<h5>Seguir lo indicado en:</h5>
+<ul>
+<li>
+<a href="https://dropwizard.github.io/dropwizard/getting-started.html" class="link external">
+<p>
+      https://dropwizard.github.io/dropwizard/getting-started.html
+    </p>
+</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1983584466">
+<h5>Modelo de clases de ejemplo</h5>
+<ul>
+<li></li>
+</ul>
+<div class="illustrations w1">
+<a href="WhatsHappeningModel.png" class="image" title=""><img src="WhatsHappeningModel.png" alt=""></a>
+</div>
+</section>
+<section class="content" id="ID_1080509491">
+<h3>Lazybones</h3>
+<ul>
+<li>Templates (mvn archetypes)<a href="#/ID_1366284119" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1366284119">
+<h4>Templates (mvn archetypes)</h4>
+<ul>
+<li>lazybones create dropwizard 0.2 whatshappening</li>
+</ul>
+</section>
+<section class="content" id="ID_587897482">
+<h3>Groovy</h3>
+<ul>
+<li>DSL<a href="#/ID_936806254" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_936806254">
+<h4>DSL</h4>
+<ul>
+<li>Primera cosa a DSLizar<a href="#/ID_964864542" class="link subsection"> &#8628;</a>
+</li>
+<li>La configuracion que se coja directamente del fichero<a href="#/ID_1587663464" class="link subsection"> &#8628;</a>
+</li>
+<li>Modelizar los rest (XXXResource) del estilo a ratpack</li>
+</ul>
+</section>
+<section class="content" id="ID_964864542">
+<h5>Primera cosa a DSLizar</h5>
+<ul>
+<li>- XXXApplication.run
+final XXXResource resource = new XXXResource(param1, param2);
+    environment.jersey().register(resource);
+
+    final XXXHealthCheck healthCheck = new XXXHealthCheck(param1);
+    environment.healthChecks().register("template", healthCheck);</li>
+<li>enviroment {
+jersey {
+XXXResource {
+param1,
+param2
+}
+}
+healthChecks {
+XXXHealthCheck {
+param1
+}
+}
+}</li>
+</ul>
+</section>
+<section class="content" id="ID_1587663464">
+<h5>La configuracion que se coja directamente del fichero</h5>
+<ul>
+<li>config.yml y no sea necesario ... XXXApplication.run(XXXConfiguration)</li>
+</ul>
+</section>
+</section>
+<!--new subsection-->
+<section>
+<section class="content" id="ID_557388051">
+<h2>Para esta presentacion</h2>
+<ul>
+<li>
+<a href="http://berteh.github.io/mindslide/" class="link external">http://berteh.github.io/mindslide/</a>
+</li>
+<li>Links<a href="#/ID_455134164" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_455134164">
+<h3>Links</h3>
+<ul>
+<li>DSL<a href="#/ID_271398696" class="link subsection"> &#8628;</a>
+</li>
+<li>DropWizard<a href="#/ID_364115565" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_271398696">
+<h4>DSL</h4>
+<ul>
+<li>
+<a href="http://groovy.codehaus.org/Writing+Domain-Specific+Languages" class="link external">http://groovy.codehaus.org/Writing+Domain-Specific+Languages</a>
+</li>
+<li>Laforge<a href="#/ID_237005200" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_237005200">
+<h5>Laforge</h5>
+<ul>
+<li>
+<a href="http://www.slideshare.net/glaforge/going-to-mars-with-groovy-domainspecific-languages" class="link external">http://www.slideshare.net/glaforge/going-to-mars-with-groovy-domainspecific-languages</a>
+</li>
+<li>
+<a href="http://groovy.codeplex.com/wikipage?title=Guillaume%20Laforge%27s%20%22Mars%20Rover%22%20tutorial%20on%20Groovy%20DSL%27s" class="link external">http://groovy.codeplex.com/wikipage?title=Guillaume%20Laforge%27s%20%22Mars%20Rover%22%20tutorial%20on%20Groovy%20DSL%27s</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_364115565">
+<h4>DropWizard</h4>
+<ul>
+<li>
+<a href="https://dropwizard.github.io/dropwizard/getting-started.html" class="link external">https://dropwizard.github.io/dropwizard/getting-started.html</a>
+</li>
+<li>Example<a href="#/ID_735149264" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_735149264">
+<h5>Example</h5>
+<ul>
+<li>
+<a href="https://github.com/dropwizard/dropwizard/tree/master/dropwizard-example" class="link external">https://github.com/dropwizard/dropwizard/tree/master/dropwizard-example</a>
+</li>
 </ul>
 </section>
 </section>

@@ -57,17 +57,17 @@
 <node TEXT="Grupo de usuarios de Groovy" ID="ID_1898223432" CREATED="1399413774670" MODIFIED="1399413782474"/>
 <node TEXT="Como ayudar a la comunidad en Madrid en este caso" ID="ID_500736524" CREATED="1399413785310" MODIFIED="1399413802479"/>
 </node>
+<node TEXT="La increible ayuda de @marioggar" ID="ID_123976478" CREATED="1402350882848" MODIFIED="1402351071196"/>
+<node TEXT="https://github.com/josejuanmontiel/whatshappening" ID="ID_1814924623" CREATED="1399413890111" MODIFIED="1399413890111" LINK="https://github.com/josejuanmontiel/whatshappening"/>
 </node>
-<node TEXT="Problema" POSITION="right" ID="ID_96460674" CREATED="1399413828187" MODIFIED="1399413850852">
+<node TEXT="Necesidad" POSITION="right" ID="ID_96460674" CREATED="1399413828187" MODIFIED="1402351578833">
 <edge COLOR="#00ff00"/>
 <node TEXT="WhatsHappening" ID="ID_1475508722" CREATED="1399413854060" MODIFIED="1399413859510">
-<node TEXT="https://github.com/josejuanmontiel/whatshappening" ID="ID_1814924623" CREATED="1399413890111" MODIFIED="1399413890111" LINK="https://github.com/josejuanmontiel/whatshappening"/>
-<node TEXT="Quieres medir como de rapido viaja una imagen en un momento determinado: derrota del Barca en Champins por el Atletico, Aguirre a la carrera, el realmadrid gana Champions..." ID="ID_1473556229" CREATED="1399413903764" MODIFIED="1401352370023"/>
+<node TEXT="Quieres saber como de rapido viaja la ultima broma por whatsapp? la derrota del Barca en por el Atletico, Aguirre a la carrera, el Real Madrid gana en el descuento, el rey abdica... Estaria genial una aplicacacion para ver el &quot;trending topic&quot; de whatsapp. Has recibido una imagen graciosa, compartela con la aplicacion &quot;whatshappening&quot; y sabras si has sido el primero en recibirla o el un millon :D" ID="ID_1473556229" CREATED="1399413903764" MODIFIED="1402351956796"/>
 </node>
 </node>
 <node TEXT="Solucion" POSITION="right" ID="ID_1376484677" CREATED="1399414082864" MODIFIED="1399414087781">
 <edge COLOR="#ff00ff"/>
-<node TEXT="Tecnologia" ID="ID_1026697642" CREATED="1399414090782" MODIFIED="1399414097057">
 <node TEXT="Dropwizard" ID="ID_710779118" CREATED="1399414099350" MODIFIED="1401368588790">
 <node TEXT="Pasos para el desarrollo" ID="ID_812672641" CREATED="1401368652569" MODIFIED="1401368660502">
 <node TEXT="Seguir lo indicado en:" ID="ID_766647821" CREATED="1401368661257" MODIFIED="1401368668191">
@@ -83,7 +83,6 @@
     </p>
   </body>
 </html>
-
 </richcontent>
 </node>
 </node>
@@ -109,9 +108,10 @@
 <node TEXT="config.yml y no sea necesario ... XXXApplication.run(XXXConfiguration)" ID="ID_825814261" CREATED="1401368772128" MODIFIED="1401368796757"/>
 </node>
 <node TEXT="Modelizar los rest (XXXResource) del estilo a ratpack" ID="ID_847041044" CREATED="1401368799224" MODIFIED="1401368832748"/>
+<node TEXT="https://github.com/mariogarcia/groovy-wizard" ID="ID_409695375" CREATED="1402352001217" MODIFIED="1402352001217" LINK="https://github.com/mariogarcia/groovy-wizard"/>
 </node>
 </node>
-</node>
+<node TEXT="Cliente Android" ID="ID_898401756" CREATED="1402351176195" MODIFIED="1402351179043"/>
 </node>
 <node TEXT="Para esta presentacion" POSITION="right" ID="ID_557388051" CREATED="1399414213375" MODIFIED="1399414220503">
 <edge COLOR="#00ffff"/>
