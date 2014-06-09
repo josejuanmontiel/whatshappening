@@ -4,12 +4,14 @@ import static javax.ws.rs.core.MediaType.MULTIPART_FORM_DATA;
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.channels.FileChannel;
+import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
+import java.nio.channels.WritableByteChannel;
 import java.util.UUID;
 
 import javax.ws.rs.Consumes;
@@ -18,8 +20,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.google.common.io.Files;
-import com.google.common.io.InputSupplier;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
@@ -50,22 +50,20 @@ public class WhatsHappeningFileResource {
 
 	public static void copyCompletely(InputStream input, OutputStream output)
 			throws IOException {
-		// if both are file streams, use channel IO
-		if ((output instanceof FileOutputStream)
-				&& (input instanceof FileInputStream)) {
-			try {
-				FileChannel target = ((FileOutputStream) output).getChannel();
-				FileChannel source = ((FileInputStream) input).getChannel();
+		 ReadableByteChannel source = Channels.newChannel(input);
+	        WritableByteChannel target = Channels.newChannel(output);
 
-				source.transferTo(0, Integer.MAX_VALUE, target);
+	        ByteBuffer buffer = ByteBuffer.allocate(16 * 1024);
+	        while (source.read(buffer) != -1) {
+	            buffer.flip(); // Prepare the buffer to be drained
+	            while (buffer.hasRemaining()) {
+	                target.write(buffer);
+	            }
+	            buffer.clear(); // Empty buffer to get ready for filling
+	        }
 
-				source.close();
-				target.close();
-
-				return;
-			} catch (Exception e) { /* failover to byte stream version */
-			}
-		}
+	        source.close();
+	        target.close();
 	}
 
 }
