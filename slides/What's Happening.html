@@ -52,9 +52,9 @@
 <section class="toc">
 <h2>Table of Content</h2>
 <ul>
-<li>Yo<a href="#/ID_924422532" class="link subsection"> &#8628;</a>
+<li>El porque de esta charla<a href="#/ID_924422532" class="link subsection"> &#8628;</a>
 </li>
-<li>Problema<a href="#/ID_96460674" class="link subsection"> &#8628;</a>
+<li>Necesidad<a href="#/ID_96460674" class="link subsection"> &#8628;</a>
 </li>
 <li>Solucion<a href="#/ID_1376484677" class="link subsection"> &#8628;</a>
 </li>
@@ -62,29 +62,26 @@
 </li>
 </ul>
 </section>
-<!--new subsection-->
-<section>
 <section class="content" id="ID_924422532">
-<h2>Yo</h2>
+<h2>El porque de esta charla</h2>
 <ul>
 <li>@accreativos</li>
-<li>MadridGUG<a href="#/ID_1278479217" class="link subsection"> &#8628;</a>
-</li>
+<li>@madridgug</li>
 <li>La increible ayuda de @marioggar</li>
+<li>
+<a href="https://github.com/josejuanmontiel/whatshappening" class="link external">https://github.com/josejuanmontiel/whatshappening</a>
+</li>
+<li>
+<p>
+      El nivel de las ultimas charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">ultima</a>&nbsp; @mgdelacroix, tengo que decir que me inspiro bastante, por el estilo y por lo que conto.<br>Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.<br>La de Ratpack ya estaba cogida, asi que tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios</a>, me decidi por Dropwizard.<br>Despues de mucho mirar y hablarlo con @marioggar, si que se habia hablado de Dropwizard en los circulos de Groovy, asi que me perdonen los puristas, pero a falta de otra... intentare empezar con java, para con algo de groovy simplificar el desarrollo con este framework. Y poder quitarnos java y maven, para usar
+    </p>
+</li>
 </ul>
-</section>
-<section class="content" id="ID_1278479217">
-<h3>MadridGUG</h3>
-<ul>
-<li>Grupo de usuarios de Groovy</li>
-<li>Como ayudar a la comunidad en Madrid en este caso</li>
-</ul>
-</section>
 </section>
 <!--new subsection-->
 <section>
 <section class="content" id="ID_96460674">
-<h2>Problema</h2>
+<h2>Necesidad</h2>
 <ul>
 <li>WhatsHappening<a href="#/ID_1475508722" class="link subsection"> &#8628;</a>
 </li>
@@ -93,10 +90,7 @@
 <section class="content" id="ID_1475508722">
 <h3>WhatsHappening</h3>
 <ul>
-<li>
-<a href="https://github.com/josejuanmontiel/whatshappening" class="link external">https://github.com/josejuanmontiel/whatshappening</a>
-</li>
-<li>Quieres medir como de rapido viaja una imagen en un momento determinado: derrota del Barca en Champins por el Atletico, Aguirre a la carrera, el realmadrid gana Champions...</li>
+<li>Quieres saber como de rapido viaja la ultima broma por whatsapp? la derrota del Barca en por el Atletico, Aguirre a la carrera, el Real Madrid gana en el descuento, el rey abdica... Estaria genial una aplicacacion para ver el "trending topic" de whatsapp. Has recibido una imagen graciosa, compartela con la aplicacion "whatshappening" y sabras si has sido el primero en recibirla o el un millon :D</li>
 </ul>
 </section>
 </section>
@@ -105,12 +99,14 @@
 <section class="content" id="ID_1376484677">
 <h2>Solucion</h2>
 <ul>
-<li>Cliente Android</li>
+<li>Vamos a desarrollar una solucion iterativa, donde primero usaremos dropwizar de la manera tradicional que sus creadores recomiendan, con java, maven y todo el pack. Despues veremos como ya hay "templates" para maven que montan la estructura basica, y luego como tambien tenemos templates para lazybones, esto nos dara pie a Groovy. Despues, gracias al aporte de @marioggar veremos como construir un DSL mediante transformaciones AST para que usando una anotacion simplifiquemos los elementos necesarios para tener un resource. Por ultimo, como bola extra, mostrare un cliente Android de este microservicio.</li>
 <li>Dropwizard<a href="#/ID_710779118" class="link subsection"> &#8628;</a>
 </li>
 <li>Lazybones<a href="#/ID_1080509491" class="link subsection"> &#8628;</a>
 </li>
 <li>Groovy<a href="#/ID_587897482" class="link subsection"> &#8628;</a>
+</li>
+<li>Cliente Android<a href="#/ID_898401756" class="link subsection"> &#8628;</a>
 </li>
 </ul>
 </section>
@@ -179,6 +175,9 @@
 <li>La configuracion que se coja directamente del fichero<a href="#/ID_1587663464" class="link subsection"> &#8628;</a>
 </li>
 <li>Modelizar los rest (XXXResource) del estilo a ratpack</li>
+<li>
+<a href="https://github.com/mariogarcia/groovy-wizard" class="link external">https://github.com/mariogarcia/groovy-wizard</a>
+</li>
 </ul>
 </section>
 <section class="content" id="ID_964864542">
@@ -211,6 +210,14 @@ param1
 <li>config.yml y no sea necesario ... XXXApplication.run(XXXConfiguration)</li>
 </ul>
 </section>
+<section class="content" id="ID_898401756">
+<h3>Cliente Android</h3>
+<ul>
+<li>
+<a href="https://code.google.com/p/maven-android-plugin/wiki/GettingStarted" class="link external">https://code.google.com/p/maven-android-plugin/wiki/GettingStarted</a>
+</li>
+</ul>
+</section>
 </section>
 <!--new subsection-->
 <section>
@@ -240,6 +247,16 @@ param1
 <a href="http://groovy.codehaus.org/Writing+Domain-Specific+Languages" class="link external">http://groovy.codehaus.org/Writing+Domain-Specific+Languages</a>
 </li>
 <li>Laforge<a href="#/ID_237005200" class="link subsection"> &#8628;</a>
+</li>
+<li>
+<a href="https://dropwizard.github.io/dropwizard/getting-started.html" class="link external">
+<p>
+      https://dropwizard.github.io/dropwizard/getting-started.html
+    </p>
+</a>
+</li>
+<li>
+<a href="http://www.amazon.com/Groovy-Domain-Specific-Languages-Fergal-Dearle/dp/184719690X" class="link external">http://www.amazon.com/Groovy-Domain-Specific-Languages-Fergal-Dearle/dp/184719690X</a>
 </li>
 </ul>
 </section>

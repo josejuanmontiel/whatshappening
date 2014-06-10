@@ -12,3 +12,5 @@ git clone https://github.com/josejuanmontiel/whatshappening.git
 cd whatshappening  # (dir whatshappening on windows)
 git submodule update --init
 ```
+
+What's Happening.html?width=1280&height=1024
