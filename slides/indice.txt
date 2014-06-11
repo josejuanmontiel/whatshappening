@@ -1,0 +1,28 @@
+Indice:
+	- El porque de la charla
+		- Nivel de charlas, inspiracion, intentar algo...
+		- ¿Dropwizar?, mario... dsl
+		- Poco groovy pero bueno... dropwizar maven, java... dsl, cliente android
+	- Necesidad
+	- Solucion
+		- Dropwizard
+			- Descipcion de los pasos para crear un proyecto minimo de dropwizard
+				- Se hace antes con otras cosas pero...
+				- Pasos...
+					- Seguir slides... (no habra live coding)
+					* Creating A Health Check
+			* acceso a bbdd para guardar las referencias..
+			* Presentacion de listados...
+		- Lazybones
+			- 
+		- Groovy
+			-
+			* Hacer alguna anotacion las anotaciones AST
+			* Hacer alguna anotacion con las referencias de groovy for DSL...
+		- Cliente Android
+			- 
+			* Implementar la aplicacion con http://melix.github.io/blog/2014/06/grooid.html
+	- Para realizar esta presentacion
+		- Mindslide
+		- Referencias
+ 

@@ -62,21 +62,28 @@
 </li>
 </ul>
 </section>
+<!--new subsection-->
+<section>
 <section class="content" id="ID_924422532">
 <h2>El porque de esta charla</h2>
 <ul>
-<li>@accreativos</li>
-<li>@madridgug</li>
-<li>La increible ayuda de @marioggar</li>
-<li>
-<a href="https://github.com/josejuanmontiel/whatshappening" class="link external">https://github.com/josejuanmontiel/whatshappening</a>
-</li>
 <li>
 <p>
-      El nivel de las ultimas charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">ultima</a>&nbsp; @mgdelacroix, tengo que decir que me inspiro bastante, por el estilo y por lo que conto.<br>Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.<br>La de Ratpack ya estaba cogida, asi que tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios</a>, me decidi por Dropwizard.<br>Despues de mucho mirar y hablarlo con @marioggar, si que se habia hablado de Dropwizard en los circulos de Groovy, asi que me perdonen los puristas, pero a falta de otra... intentare empezar con java, para con algo de groovy simplificar el desarrollo con este framework. Y poder quitarnos java y maven, para usar
+      El nivel de las ultimas charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">penultima</a>&nbsp; tengo que decir que @mgdelacroix me inspiro bastante, por el estilo y por lo que conto. Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.<br>La de Ratpack ya estaba cogida, asi que tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios @madridgug</a>, me decidi por intentarlo con Dropwizard y despues de mucho mirar y comentarlo @marioggar antes de su <a href="http://www.meetup.com/madrid-gug/events/181236742/">workshop</a>, si que se habia hablado de Dropwizard en los circulos de Groovy, aunque no es un framework groovy. Pero bueno, eso no iba a detener, jeje, asi que la idea era intentar enforcarlo al DSL... me perdonen ;) si no hay mucho groovy, pero estoy empezando...<br>El enfoque es el siguiente: ver que ofrece dropwizar (con maven, java y todo esas cosas que tanto gustan ;) para ver como poder simplificar el desarrollo con groovy y anotaciones...Espero que les guste ;)
     </p>
 </li>
+<li>&iquest;Empezamos?<a href="#/ID_1404292888" class="link subsection"> &#8628;</a>
+</li>
 </ul>
+</section>
+<section class="content" id="ID_1404292888">
+<h3>&iquest;Empezamos?</h3>
+<ul>
+<li>Soy @accreativos, programador java (con ganas de groovy), marido y padre de 2 ni&ntilde;as (siempre quise decir eso)</li>
+<li>Agradecir la ayuda de @marioggar para preparar esto</li>
+<li>Y el codigo de todo lo que voy a contar: https://github.com/josejuanmontiel/whatshappening</li>
+</ul>
+</section>
 </section>
 <!--new subsection-->
 <section>
@@ -113,39 +120,371 @@
 <section class="content" id="ID_710779118">
 <h3>Dropwizard</h3>
 <ul>
-<li>Pasos para el desarrollo<a href="#/ID_812672641" class="link subsection"> &#8628;</a>
+<li>We recommend you use Maven for new Dropwizard applications. If you&rsquo;re a big Ant / Ivy, Buildr, Gradle, SBT, Leiningen, or Gant fan, that&rsquo;s cool, but we use Maven and we&rsquo;ll be using Maven as we go through this example application. If you have any questions...</li>
+<li>
+<a href="https://dropwizard.github.io/dropwizard/getting-started.html" class="link external">https://dropwizard.github.io/dropwizard/getting-started.html</a>
 </li>
-</ul>
-</section>
-<section class="content" id="ID_812672641">
-<h4>Pasos para el desarrollo</h4>
-<ul>
-<li>Seguir lo indicado en:<a href="#/ID_766647821" class="link subsection"> &#8628;</a>
+<li>Pasos<a href="#/ID_1875783503" class="link subsection"> &#8628;</a>
 </li>
 <li>Modelo de clases de ejemplo<a href="#/ID_1983584466" class="link subsection"> &#8628;</a>
 </li>
-</ul>
-</section>
-<section class="content" id="ID_766647821">
-<h5>Seguir lo indicado en:</h5>
-<ul>
-<li>
-<a href="https://dropwizard.github.io/dropwizard/getting-started.html" class="link external">
-<p>
-      https://dropwizard.github.io/dropwizard/getting-started.html
-    </p>
-</a>
+<li>Proximos pasos<a href="#/ID_128650939" class="link subsection"> &#8628;</a>
 </li>
 </ul>
 </section>
+<section class="content" id="ID_1875783503">
+<h4>Pasos</h4>
+<ul>
+<li>Voy a ir resumiendo un poco lo que dice la documentacion, para que se vea que maven tampoco es tan malo :D Notar que con spring-boot echas a andar antes, y por supuesto con RatPack mucho antes todavia... pero bueno, esta charla va de Dropwizard :(</li>
+<li>Crear el arquetipo del proyecto con maven<a href="#/ID_469700088" class="link subsection"> &#8628;</a>
+</li>
+<li>Crear clase de configuracion<a href="#/ID_394612095" class="link subsection"> &#8628;</a>
+</li>
+<li>Crear fichero de configuracion para la clase de configuracion<a href="#/ID_1689424406" class="link subsection"> &#8628;</a>
+</li>
+<li>Crear clase de aplicacion<a href="#/ID_834271980" class="link subsection"> &#8628;</a>
+</li>
+<li>Crear una clase de representacion<a href="#/ID_211256902" class="link subsection"> &#8628;</a>
+</li>
+<li>Crear una clase de recurso<a href="#/ID_460234508" class="link subsection"> &#8628;</a>
+</li>
+<li>Ahora hay que registrar el recurso<a href="#/ID_1192262108" class="link subsection"> &#8628;</a>
+</li>
+<li>Creating A Health Check<a href="#/ID_1868140464" class="link subsection"> &#8628;</a>
+</li>
+<li>Fat Jar?<a href="#/ID_1359959427" class="link subsection"> &#8628;</a>
+</li>
+<li>Ejecutar la aplicacion<a href="#/ID_834813962" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_469700088">
+<h5>Crear el arquetipo del proyecto con maven</h5>
+<ul>
+<li>
+<pre>mvn archetype:generate \
+		-DgroupId=com.accreativos.whatshappening \
+		-DartifactId=core -DarchetypeArtifactId=maven-archetype-quickstart \
+		-DinteractiveMode=false</pre>
+</li>
+<li>Y ahora a&ntilde;adimos la dependencia en el pom.xml principal</li>
+<li>
+<pre>&lt;properties&gt;
+	&lt;dropwizard.version&gt;0.7.0&lt;/dropwizard.version&gt;
+&lt;/properties&gt;
+
+&lt;dependencies&gt;
+	&lt;dependency&gt;
+		&lt;groupId&gt;io.dropwizard&lt;/groupId&gt;
+		&lt;artifactId&gt;dropwizard-core&lt;/artifactId&gt;
+		&lt;version&gt;${dropwizard.version}&lt;/version&gt;
+	&lt;/dependency&gt;
+&lt;/dependencies&gt;</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_394612095">
+<h5>Crear clase de configuracion</h5>
+<ul>
+<li>La clase de configuracion sera la encargada de leer sus valores de un fichero que machea con las atributos y de emponerlo al resto de la aplicacion</li>
+<li>
+<pre>package com.accreativos.whatshappening;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.dropwizard.Configuration;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
+public class WhatsHappeningConfiguration extends Configuration {
+    @NotEmpty
+    private String template;
+
+    @NotEmpty
+    private String defaultName = "Stranger";
+
+    @JsonProperty
+    public String getTemplate() {
+        return template;
+    }
+
+    @JsonProperty
+    public void setTemplate(String template) {
+        this.template = template;
+    }
+
+    @JsonProperty
+    public String getDefaultName() {
+        return defaultName;
+    }
+
+    @JsonProperty
+    public void setDefaultName(String defaultName) {
+        this.defaultName = defaultName;
+    }
+
+}</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1689424406">
+<h5>Crear fichero de configuracion para la clase de configuracion</h5>
+<ul>
+<li>En la raiz del proyecto creamos un core.yml</li>
+<li>Se le pueden poner mas configuraciones (logs, puertos servidor) que seran leidas por otras partes del framwork</li>
+<li>
+<pre>template: Hello, %s!
+defaultName: Stranger
+
+# use the simple server factory if you only want to run on a single port
+server:
+# softNofileLimit: 1000
+# hardNofileLimit: 1000
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+# Logging settings.
+logging:
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: INFO
+  # Logger-specific levels.
+  loggers:
+    # Sets the level for 'com.example.app' to DEBUG.
+    com.example.app: DEBUG
+    org.hibernate.SQL: ALL
+  appenders:
+    - type: console</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_834271980">
+<h5>Crear clase de aplicacion</h5>
+<ul>
+<li>Esta clase sera la que tenga el "main" que al estilo de spring-boot realiza la "magia" de ser el punto de arranque del todo el conjunto: aplicacion + servidor</li>
+<li>
+<pre>package com.accreativos.whatshappening;
+
+import io.dropwizard.Application;
+import io.dropwizard.setup.Bootstrap;
+import io.dropwizard.setup.Environment;
+import com.accreativos.whatshappening.resources.*;
+import com.accreativos.whatshappening.health.TemplateHealthCheck;
+
+public class WhatsHappeningApplication extends Application<whatshappeningconfiguration></whatshappeningconfiguration> {
+
+    public static void main(String[] args) throws Exception {
+        new WhatsHappeningApplication().run(args);
+    }
+
+    @Override
+    public String getName() {
+        return "WhatsHappening";
+    }
+
+    @Override
+    public void initialize(Bootstrap<whatshappeningconfiguration></whatshappeningconfiguration> bootstrap) {
+        // nothing to do yet
+    }
+
+    @Override
+    public void run(WhatsHappeningConfiguration configuration, Environment environment) {
+	// Aqui seguiremos luego...
+    }
+}</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_211256902">
+<h5>Crear una clase de representacion</h5>
+<ul>
+<li>Para este ejemplo vamos a crear un servicio rest que reciba un upload de una imagen, mas adelante, montaremos una API rest que expondra ciertas funciones para listar y catalogar el contenido... que sera explotada por la aplicacion cliente android o una aplicacion web con javascript, por tanto pasamos directamente a la clase de recurso.</li>
+</ul>
+</section>
+<section class="content" id="ID_460234508">
+<h5>Crear una clase de recurso</h5>
+<ul>
+<li>Para eso necesitamos una depencia nueva<a href="#/ID_1749608096" class="link subsection"> &#8628;</a>
+</li>
+<li>La clase quedaria asi...<a href="#/ID_696369022" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1749608096">
+<h6>Para eso necesitamos una depencia nueva</h6>
+<ul>
+<li>
+<pre>&lt;dependency&gt;
+	&lt;groupId&gt;com.sun.jersey.contribs&lt;/groupId&gt;
+	&lt;artifactId&gt;jersey-multipart&lt;/artifactId&gt;
+	&lt;version&gt;1.18.1&lt;/version&gt;
+&lt;/dependency&gt;</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_696369022">
+<h6>La clase quedaria asi...</h6>
+<ul>
+<li>
+<pre>package com.accreativos.whatshappening.resources;
+
+import static javax.ws.rs.core.MediaType.*;
+import java.io.*;
+import java.nio.*;
+import java.nio.channels.*;
+import java.util.*;
+import javax.ws.rs.*;
+import javax.ws.rs.core.*;
+import com.sun.jersey.core.header.*;
+import com.sun.jersey.multipart.*;
+
+@Path("/image")
+@Produces(MediaType.APPLICATION_JSON)
+public class WhatsHappeningFileResource {
+	public static final String UPLOAD_DIR = "/tmp";
+	public WhatsHappeningFileResource() {}
+
+	@POST
+	@Path("/attached")
+	@Produces(TEXT_PLAIN)
+	@Consumes(MULTIPART_FORM_DATA)
+	public String uploadFile(@FormDataParam("image") final InputStream stream,
+			@FormDataParam("image") FormDataContentDisposition fileDetail)
+			throws Exception {
+            String tempname = UUID.randomUUID().toString();
+	    final String outputPath = UPLOAD_DIR + File.separator + tempname;
+	    copyCompletely(stream, new FileOutputStream(outputPath));
+	    return tempname;
+	}
+
+
+	public static void copyCompletely(InputStream input, OutputStream output) throws IOException { 
+            ...
+	}
+}</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1192262108">
+<h5>Ahora hay que registrar el recurso</h5>
+<ul>
+<li>Asi que volvemos a la clase de aplicacion para registar el nuevo recurso que hemos creado</li>
+<li>
+<pre>package com.accreativos.whatshappening;
+
+import io.dropwizard.*;
+import io.dropwizard.setup.*;
+import com.accreativos.whatshappening.resources.*;
+
+public class WhatsHappeningApplication extends Application&lt;WhatsHappeningConfiguration&gt; {
+
+	...
+
+    @Override
+    public void run(WhatsHappeningConfiguration configuration, Environment environment) {
+		final WhatsHappeningFileResource resourceFile = new WhatsHappeningFileResource();
+	    environment.jersey().register(resourceFile);
+    }
+}</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1868140464">
+<h5>Creating A Health Check</h5>
+<ul>
+<li>// TODO</li>
+</ul>
+</section>
+<section class="content" id="ID_1359959427">
+<h5>Fat Jar?</h5>
+<ul>
+<li>Hemos visto que la aplicacion tiene un main, entonces se puede ejecutar con java className &iquest;pero que pasa con las dependencias y demas clases auxiliares?</li>
+<li>Fat jar al rescate, con un plugin de manen (si estabamos con maven ;) podremos construir un unico jar que contenga toda la aplicacion y sus dependencias.</li>
+<li>A&ntilde;adimos a nuestro pom.xml<a href="#/ID_1632773197" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1632773197">
+<h6>A&ntilde;adimos a nuestro pom.xml</h6>
+<ul>
+<li>
+<pre style="font-size: 14px">&lt;build&gt;
+	&lt;plugins&gt;
+		&lt;plugin&gt;
+			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+			&lt;artifactId&gt;maven-shade-plugin&lt;/artifactId&gt;
+			&lt;version&gt;1.6&lt;/version&gt;
+			&lt;configuration&gt;
+				&lt;createDependencyReducedPom&gt;true&lt;/createDependencyReducedPom&gt;
+				&lt;filters&gt;
+					&lt;filter&gt;
+						&lt;artifact&gt;*:*&lt;/artifact&gt;
+						&lt;excludes&gt;
+							&lt;exclude&gt;META-INF/*.SF&lt;/exclude&gt;
+							&lt;exclude&gt;META-INF/*.DSA&lt;/exclude&gt;
+							&lt;exclude&gt;META-INF/*.RSA&lt;/exclude&gt;
+						&lt;/excludes&gt;
+					&lt;/filter&gt;
+					&lt;/filters&gt;
+			&lt;/configuration&gt;
+			&lt;executions&gt;
+				&lt;execution&gt;
+					&lt;phase&gt;package&lt;/phase&gt;
+						&lt;goals&gt;
+							&lt;goal&gt;shade&lt;/goal&gt;
+						&lt;/goals&gt;
+						&lt;configuration&gt;
+							&lt;transformers&gt;
+								&lt;transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/&gt;
+								&lt;transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"&gt;
+									&lt;mainClass&gt;com.accreativos.whatshappening.WhatsHappeningApplication&lt;/mainClass&gt;
+								&lt;/transformer&gt;
+							&lt;/transformers&gt;
+						&lt;/configuration&gt;
+				&lt;/execution&gt;
+			&lt;/executions&gt;
+		&lt;/plugin&gt;
+		&lt;plugin&gt;
+			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+			&lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
+			&lt;version&gt;2.4&lt;/version&gt;
+			&lt;configuration&gt;
+				&lt;archive&gt;
+					&lt;manifest&gt;
+						&lt;addDefaultImplementationEntries&gt;true&lt;/addDefaultImplementationEntries&gt;
+					&lt;/manifest&gt;
+				&lt;/archive&gt;
+			&lt;/configuration&gt;
+		&lt;/plugin&gt;
+	&lt;/plugins&gt;
+&lt;/build&gt;</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_834813962">
+<h5>Ejecutar la aplicacion</h5>
+<ul>
+<li>Ahora que ya podemos generar fat jars...</li>
+<li>mvn package</li>
+<li>Y para ejecutar: java -jar target/core-1.0-SNAPSHOT.jar server core.yml donde core.yml es el fichero de configuracion</li>
+</ul>
+</section>
 <section class="content" id="ID_1983584466">
-<h5>Modelo de clases de ejemplo</h5>
+<h4>Modelo de clases de ejemplo</h4>
 <ul>
 <li></li>
 </ul>
 <div class="illustrations w1">
 <a href="WhatsHappeningModel.png" class="image" title=""><img src="WhatsHappeningModel.png" alt=""></a>
 </div>
+</section>
+<section class="content" id="ID_128650939">
+<h4>Proximos pasos</h4>
+<ul>
+<li>Acceso a bbdd para guardar las referencias y datos de las imagenes subidas...</li>
+<li>Presentacion de listados "trending whatsapp"</li>
+</ul>
 </section>
 <section class="content" id="ID_1080509491">
 <h3>Lazybones</h3>
