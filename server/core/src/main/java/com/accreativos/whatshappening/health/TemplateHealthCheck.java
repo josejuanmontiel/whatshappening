@@ -1,6 +1,7 @@
 package com.accreativos.whatshappening.health;
 
 import com.codahale.metrics.health.HealthCheck;
+import com.codahale.metrics.health.HealthCheck.Result;
 
 public class TemplateHealthCheck extends HealthCheck {
     private final String template;
