@@ -14,10 +14,12 @@ import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
 import com.sun.jersey.core.header.FormDataContentDisposition;
@@ -37,11 +39,15 @@ public class WhatsHappeningFileResource {
 	@Produces(TEXT_PLAIN)
 	@Consumes(MULTIPART_FORM_DATA)
 	public String uploadFile(@FormDataParam("image") final InputStream stream,
-			@FormDataParam("image") FormDataContentDisposition fileDetail)
+			@FormDataParam("image") FormDataContentDisposition fileDetail,
+			@Context HttpServletRequest request)
 			throws Exception {
 
 		String tempname = UUID.randomUUID().toString();
 		final String outputPath = UPLOAD_DIR + File.separator + tempname;
+		
+		String ip = request.getRemoteAddr();
+		String fileName = fileDetail.getFileName();
 
 		copyCompletely(stream, new FileOutputStream(outputPath));
 
