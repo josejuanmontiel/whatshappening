@@ -22,6 +22,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
+import org.joda.time.DateTime;
+
+import com.accreativos.whatshappening.db.FileDAO;
 import com.sun.jersey.core.header.FormDataContentDisposition;
 import com.sun.jersey.multipart.FormDataParam;
 
@@ -29,9 +32,12 @@ import com.sun.jersey.multipart.FormDataParam;
 @Produces(MediaType.APPLICATION_JSON)
 public class WhatsHappeningFileResource {
 
-	public static final String UPLOAD_DIR = "/tmp";
+	public static final String UPLOAD_DIR = "/home/whatshappening/uploads";
 
-	public WhatsHappeningFileResource() {
+	private final FileDAO dao;
+	
+	public WhatsHappeningFileResource(FileDAO dao) {
+		this.dao = dao;
 	}
 
 	@POST
@@ -48,6 +54,8 @@ public class WhatsHappeningFileResource {
 		
 		String ip = request.getRemoteAddr();
 		String fileName = fileDetail.getFileName();
+		
+		dao.insert(fileName, outputPath, ip, DateTime.now(), 1);
 
 		copyCompletely(stream, new FileOutputStream(outputPath));
 
