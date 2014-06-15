@@ -58,7 +58,7 @@ public class HelloAndroidActivity extends Activity implements OnTaskCompleteList
 					ContentResolver cr = getContentResolver();
 					InputStream is = cr.openInputStream(uri);
 
-					mAsyncTaskManager.setupTask(new Task(getResources(), is));
+					mAsyncTaskManager.setupTask(new Task(getResources(), is, uri.getPath()));
 					
 					return;
 				} catch (Exception e) {

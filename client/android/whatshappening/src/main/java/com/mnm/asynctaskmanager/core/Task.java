@@ -21,16 +21,18 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 
 	protected final Resources mResources;
 	protected final InputStream is;
+	protected final String existingFileName;
 
 	private Boolean mResult;
 	private String mProgressMessage;
 	private IProgressTracker mProgressTracker;
 
 	/* UI Thread */
-	public Task(Resources resources, InputStream is) {
+	public Task(Resources resources, InputStream is, String existingFileName) {
 		// Keep reference to resources
 		mResources = resources;
 		this.is = is;
+		this.existingFileName = existingFileName;
 		// Initialise initial pre-execute message
 		mProgressMessage = resources.getString(R.string.task_starting);
 	}
@@ -94,7 +96,7 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 	
 		byte[] data = getBytesFromFile(is);
 	    
-		doFileUpload("file1",data);
+		doFileUpload(existingFileName,data);
 
 		// This return causes onPostExecute call on UI thread
 		return true;
@@ -108,7 +110,7 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 		String lineEnd = "\r\n";
 		String twoHyphens = "--";
 		String boundary = "*****";
-		String urlString = "http://10.0.6.52:8080/image/attached";
+		String urlString = "http://192.168.1.39:8080/image/attached";
 
 		try {
 			// ------------------ CLIENT REQUEST
@@ -143,7 +145,9 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 			dos.flush();
 			dos.close();
 		} catch (MalformedURLException ex) {
+			ex.getLocalizedMessage();
 		} catch (IOException ioe) {
+			ioe.getLocalizedMessage();
 		}
 
 		// ------------------ read the SERVER RESPONSE
