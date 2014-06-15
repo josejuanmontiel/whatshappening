@@ -52,11 +52,13 @@
 <section class="toc">
 <h2>Table of Content</h2>
 <ul>
-<li>El porque de esta charla<a href="#/ID_924422532" class="link subsection"> &#8628;</a>
+<li>&iquest;De que va esta charla?<a href="#/ID_924422532" class="link subsection"> &#8628;</a>
 </li>
 <li>Necesidad<a href="#/ID_96460674" class="link subsection"> &#8628;</a>
 </li>
 <li>Solucion<a href="#/ID_1376484677" class="link subsection"> &#8628;</a>
+</li>
+<li>What next?<a href="#/ID_944183479" class="link subsection"> &#8628;</a>
 </li>
 <li>Para esta presentacion<a href="#/ID_557388051" class="link subsection"> &#8628;</a>
 </li>
@@ -65,22 +67,56 @@
 <!--new subsection-->
 <section>
 <section class="content" id="ID_924422532">
-<h2>El porque de esta charla</h2>
+<h2>&iquest;De que va esta charla?</h2>
 <ul>
-<li>
-<p>
-      El nivel de las ultimas charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">penultima</a>&nbsp; tengo que decir que @mgdelacroix me inspiro bastante, por el estilo y por lo que conto. Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.<br>La de Ratpack ya estaba cogida, asi que tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios @madridgug</a>, me decidi por intentarlo con Dropwizard y despues de mucho mirar y comentarlo @marioggar antes de su <a href="http://www.meetup.com/madrid-gug/events/181236742/">workshop</a>, si que se habia hablado de Dropwizard en los circulos de Groovy, aunque no es un framework groovy. Pero bueno, eso no iba a detener, jeje, asi que la idea era intentar enforcarlo al DSL... me perdonen ;) si no hay mucho groovy, pero estoy empezando...<br>El enfoque es el siguiente: ver que ofrece dropwizar (con maven, java y todo esas cosas que tanto gustan ;) para ver como poder simplificar el desarrollo con groovy y anotaciones...Espero que les guste ;)
-    </p>
+<li>Intro...<a href="#/ID_1073758459" class="link subsection"> &#8628;</a>
 </li>
-<li>&iquest;Empezamos?<a href="#/ID_1404292888" class="link subsection"> &#8628;</a>
+<li>&iquest;Adelante?<a href="#/ID_1404292888" class="link subsection"> &#8628;</a>
 </li>
 </ul>
 </section>
+<section class="content" id="ID_1073758459">
+<h3>Intro...</h3>
+<ul>
+<li>Cuando<a href="#/ID_1334654494" class="link subsection"> &#8628;</a>
+</li>
+<li>Porqu&eacute;<a href="#/ID_338691539" class="link subsection"> &#8628;</a>
+</li>
+<li>Como<a href="#/ID_493698158" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1334654494">
+<h4>Cuando</h4>
+<ul>
+<li>
+<p>
+      El nivel de las ultimas charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">penultima</a>&nbsp; tengo que decir que @mgdelacroix me inspiro bastante, por el estilo y por lo que conto. Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.
+    </p>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_338691539">
+<h4>Porqu&eacute;</h4>
+<ul>
+<li>
+<p>
+      La de Ratpack ya estaba cogida, asi que tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios @madridgug</a>, me decidi por intentarlo con Dropwizard y despues de mucho mirar y comentarlo @marioggar antes de su <a href="http://www.meetup.com/madrid-gug/events/181236742/">workshop</a>, si que se habia hablado de Dropwizard en los circulos de Groovy aunque no es un framework groovy. Pero bueno, eso no me iba a detener, asi que la idea era intentar enforcarlo al DSL... me perdonen ;) si no hay mucho groovy...
+    </p>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_493698158">
+<h4>Como</h4>
+<ul>
+<li>El enfoque es el siguiente: ver que ofrece dropwizar (con maven, java y todo esas cosas que tanto gustan ;) para ver como poder simplificar el desarrollo con gradle, groovy y anotaciones...Espero que les guste ;)</li>
+</ul>
+</section>
 <section class="content" id="ID_1404292888">
-<h3>&iquest;Empezamos?</h3>
+<h3>&iquest;Adelante?</h3>
 <ul>
 <li>Soy @accreativos, programador java (con ganas de groovy), marido y padre de 2 ni&ntilde;as (siempre quise decir eso)</li>
-<li>Agradecir la ayuda de @marioggar para preparar esto</li>
+<li>Agradecer la ayuda de @marioggar para preparar esto</li>
 <li>Y el codigo de todo lo que voy a contar: https://github.com/josejuanmontiel/whatshappening</li>
 </ul>
 </section>
@@ -97,7 +133,7 @@
 <section class="content" id="ID_1475508722">
 <h3>WhatsHappening</h3>
 <ul>
-<li>Quieres saber como de rapido viaja la ultima broma por whatsapp? la derrota del Barca en por el Atletico, Aguirre a la carrera, el Real Madrid gana en el descuento, el rey abdica... Estaria genial una aplicacacion para ver el "trending topic" de whatsapp. Has recibido una imagen graciosa, compartela con la aplicacion "whatshappening" y sabras si has sido el primero en recibirla o el un millon :D</li>
+<li>Quieres saber como de rapido viaja la ultima broma por whatsapp? Cual es el meme de moda? Aguirre a la carrera, el Real Madrid gana en el descuento, el rey abdica, espa&ntilde;a pierde con holanda... Estaria genial una aplicacacion para ver el "trending topic" de whatsapp. Has recibido una imagen graciosa, compartela con la aplicacion "whatshappening" y sabras si has sido el primero en recibirla o el un millon :D Acediendo a la web podras ver el historial de noticias, en base a los memes, como viajan, por donde se mueven (hora y lugar)  sobre un mapa y cuanto duran algunos que son mas atemporales... una prueba de concepto a implementar.</li>
 </ul>
 </section>
 </section>
@@ -136,6 +172,15 @@
 <h4>Pasos</h4>
 <ul>
 <li>Voy a ir resumiendo un poco lo que dice la documentacion, para que se vea que maven tampoco es tan malo :D Notar que con spring-boot echas a andar antes, y por supuesto con RatPack mucho antes todavia... pero bueno, esta charla va de Dropwizard :(</li>
+<li>Primer bloque<a href="#/ID_1301055060" class="link subsection"> &#8628;</a>
+</li>
+<li>Segundo bloque<a href="#/ID_1775614897" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1301055060">
+<h5>Primer bloque</h5>
+<ul>
 <li>Crear el arquetipo del proyecto con maven<a href="#/ID_469700088" class="link subsection"> &#8628;</a>
 </li>
 <li>Crear clase de configuracion<a href="#/ID_394612095" class="link subsection"> &#8628;</a>
@@ -150,16 +195,10 @@
 </li>
 <li>Ahora hay que registrar el recurso<a href="#/ID_1192262108" class="link subsection"> &#8628;</a>
 </li>
-<li>Creating A Health Check<a href="#/ID_1868140464" class="link subsection"> &#8628;</a>
-</li>
-<li>Fat Jar?<a href="#/ID_1359959427" class="link subsection"> &#8628;</a>
-</li>
-<li>Ejecutar la aplicacion<a href="#/ID_834813962" class="link subsection"> &#8628;</a>
-</li>
 </ul>
 </section>
 <section class="content" id="ID_469700088">
-<h5>Crear el arquetipo del proyecto con maven</h5>
+<h6>Crear el arquetipo del proyecto con maven</h6>
 <ul>
 <li>
 <pre>mvn archetype:generate \
@@ -184,7 +223,7 @@
 </ul>
 </section>
 <section class="content" id="ID_394612095">
-<h5>Crear clase de configuracion</h5>
+<h6>Crear clase de configuracion</h6>
 <ul>
 <li>La clase de configuracion sera la encargada de leer sus valores de un fichero que machea con las atributos y de emponerlo al resto de la aplicacion</li>
 <li>
@@ -200,36 +239,27 @@ import javax.validation.constraints.NotNull;
 public class WhatsHappeningConfiguration extends Configuration {
     @NotEmpty
     private String template;
-
     @NotEmpty
     private String defaultName = "Stranger";
 
     @JsonProperty
-    public String getTemplate() {
-        return template;
-    }
+    public String getTemplate() { return template; }
 
     @JsonProperty
-    public void setTemplate(String template) {
-        this.template = template;
-    }
+    public void setTemplate(String template) {  this.template = template;}
 
     @JsonProperty
-    public String getDefaultName() {
-        return defaultName;
-    }
+    public String getDefaultName() { return defaultName; }
 
     @JsonProperty
-    public void setDefaultName(String defaultName) {
-        this.defaultName = defaultName;
-    }
+    public void setDefaultName(String defaultName) { this.defaultName = defaultName; }
 
 }</pre>
 </li>
 </ul>
 </section>
 <section class="content" id="ID_1689424406">
-<h5>Crear fichero de configuracion para la clase de configuracion</h5>
+<h6>Crear fichero de configuracion para la clase de configuracion</h6>
 <ul>
 <li>En la raiz del proyecto creamos un core.yml</li>
 <li>Se le pueden poner mas configuraciones (logs, puertos servidor) que seran leidas por otras partes del framwork</li>
@@ -260,7 +290,7 @@ logging:
 </ul>
 </section>
 <section class="content" id="ID_834271980">
-<h5>Crear clase de aplicacion</h5>
+<h6>Crear clase de aplicacion</h6>
 <ul>
 <li>Esta clase sera la que tenga el "main" que al estilo de spring-boot realiza la "magia" de ser el punto de arranque del todo el conjunto: aplicacion + servidor</li>
 <li>
@@ -273,37 +303,31 @@ import com.accreativos.whatshappening.resources.*;
 import com.accreativos.whatshappening.health.TemplateHealthCheck;
 
 public class WhatsHappeningApplication extends Application<whatshappeningconfiguration></whatshappeningconfiguration> {
-
     public static void main(String[] args) throws Exception {
         new WhatsHappeningApplication().run(args);
     }
-
     @Override
     public String getName() {
         return "WhatsHappening";
     }
-
     @Override
     public void initialize(Bootstrap<whatshappeningconfiguration></whatshappeningconfiguration> bootstrap) {
-        // nothing to do yet
     }
-
     @Override
     public void run(WhatsHappeningConfiguration configuration, Environment environment) {
-	// Aqui seguiremos luego...
     }
 }</pre>
 </li>
 </ul>
 </section>
 <section class="content" id="ID_211256902">
-<h5>Crear una clase de representacion</h5>
+<h6>Crear una clase de representacion</h6>
 <ul>
-<li>Para este ejemplo vamos a crear un servicio rest que reciba un upload de una imagen, mas adelante, montaremos una API rest que expondra ciertas funciones para listar y catalogar el contenido... que sera explotada por la aplicacion cliente android o una aplicacion web con javascript, por tanto pasamos directamente a la clase de recurso.</li>
+<li>Para este ejemplo vamos a crear un servicio rest que reciba un upload de una imagen, mas adelante, montaremos una API rest que expondra ciertas funciones para listar y catalogar el contenido... que sera explotada por la aplicacion cliente android o una aplicacion web con javascript, incluso porque no una aplicacion grails que sirva para administrar y catalogar el contenido, subir plugins de reconocimiento de imagenes, feeds de noticias para ver con que eventos coincen... pero bueno, pasamos directamente a la clase de recurso.</li>
 </ul>
 </section>
 <section class="content" id="ID_460234508">
-<h5>Crear una clase de recurso</h5>
+<h6>Crear una clase de recurso</h6>
 <ul>
 <li>Para eso necesitamos una depencia nueva<a href="#/ID_1749608096" class="link subsection"> &#8628;</a>
 </li>
@@ -312,7 +336,7 @@ public class WhatsHappeningApplication extends Application<whatshappeningconfigu
 </ul>
 </section>
 <section class="content" id="ID_1749608096">
-<h6>Para eso necesitamos una depencia nueva</h6>
+<h7>Para eso necesitamos una depencia nueva</h7>
 <ul>
 <li>
 <pre>&lt;dependency&gt;
@@ -324,18 +348,13 @@ public class WhatsHappeningApplication extends Application<whatshappeningconfigu
 </ul>
 </section>
 <section class="content" id="ID_696369022">
-<h6>La clase quedaria asi...</h6>
+<h7>La clase quedaria asi...</h7>
 <ul>
 <li>
 <pre>package com.accreativos.whatshappening.resources;
 
 import static javax.ws.rs.core.MediaType.*;
-import java.io.*;
-import java.nio.*;
-import java.nio.channels.*;
-import java.util.*;
-import javax.ws.rs.*;
-import javax.ws.rs.core.*;
+...
 import com.sun.jersey.core.header.*;
 import com.sun.jersey.multipart.*;
 
@@ -350,24 +369,19 @@ public class WhatsHappeningFileResource {
 	@Produces(TEXT_PLAIN)
 	@Consumes(MULTIPART_FORM_DATA)
 	public String uploadFile(@FormDataParam("image") final InputStream stream,
-			@FormDataParam("image") FormDataContentDisposition fileDetail)
-			throws Exception {
-            String tempname = UUID.randomUUID().toString();
-	    final String outputPath = UPLOAD_DIR + File.separator + tempname;
+			@FormDataParam("image") FormDataContentDisposition fileDetail) throws Exception {
+	    final String outputPath = UPLOAD_DIR + File.separator + UUID.randomUUID().toString();
 	    copyCompletely(stream, new FileOutputStream(outputPath));
 	    return tempname;
 	}
 
-
-	public static void copyCompletely(InputStream input, OutputStream output) throws IOException { 
-            ...
-	}
+	public static void copyCompletely(InputStream input, OutputStream output) throws IOException {	}
 }</pre>
 </li>
 </ul>
 </section>
 <section class="content" id="ID_1192262108">
-<h5>Ahora hay que registrar el recurso</h5>
+<h6>Ahora hay que registrar el recurso</h6>
 <ul>
 <li>Asi que volvemos a la clase de aplicacion para registar el nuevo recurso que hemos creado</li>
 <li>
@@ -390,14 +404,27 @@ public class WhatsHappeningApplication extends Application&lt;WhatsHappeningConf
 </li>
 </ul>
 </section>
+<section class="content" id="ID_1775614897">
+<h5>Segundo bloque</h5>
+<ul>
+<li>Creating A Health Check<a href="#/ID_1868140464" class="link subsection"> &#8628;</a>
+</li>
+<li>Fat Jar?<a href="#/ID_1359959427" class="link subsection"> &#8628;</a>
+</li>
+<li>Ejecutar la aplicacion<a href="#/ID_834813962" class="link subsection"> &#8628;</a>
+</li>
+<li>Ya podemos probarlo<a href="#/ID_503398811" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
 <section class="content" id="ID_1868140464">
-<h5>Creating A Health Check</h5>
+<h6>Creating A Health Check</h6>
 <ul>
 <li>// TODO</li>
 </ul>
 </section>
 <section class="content" id="ID_1359959427">
-<h5>Fat Jar?</h5>
+<h6>Fat Jar?</h6>
 <ul>
 <li>Hemos visto que la aplicacion tiene un main, entonces se puede ejecutar con java className &iquest;pero que pasa con las dependencias y demas clases auxiliares?</li>
 <li>Fat jar al rescate, con un plugin de manen (si estabamos con maven ;) podremos construir un unico jar que contenga toda la aplicacion y sus dependencias.</li>
@@ -406,7 +433,7 @@ public class WhatsHappeningApplication extends Application&lt;WhatsHappeningConf
 </ul>
 </section>
 <section class="content" id="ID_1632773197">
-<h6>A&ntilde;adimos a nuestro pom.xml</h6>
+<h7>A&ntilde;adimos a nuestro pom.xml</h7>
 <ul>
 <li>
 <pre style="font-size: 14px">&lt;build&gt;
@@ -463,11 +490,24 @@ public class WhatsHappeningApplication extends Application&lt;WhatsHappeningConf
 </ul>
 </section>
 <section class="content" id="ID_834813962">
-<h5>Ejecutar la aplicacion</h5>
+<h6>Ejecutar la aplicacion</h6>
 <ul>
 <li>Ahora que ya podemos generar fat jars...</li>
 <li>mvn package</li>
 <li>Y para ejecutar: java -jar target/core-1.0-SNAPSHOT.jar server core.yml donde core.yml es el fichero de configuracion</li>
+</ul>
+</section>
+<section class="content" id="ID_503398811">
+<h6>Ya podemos probarlo</h6>
+<ul>
+<li>
+<pre>&lt;form action="http://localhost:8080/image/attached" method="post" enctype="multipart/form-data"&gt;
+&lt;label for="image"&gt;Filename:&lt;/label&gt;
+&lt;input type="file" name="image" id="image" /&gt;
+&lt;br /&gt;
+&lt;input type="submit" name="submit" value="upload" /&gt;
+&lt;/form&gt;</pre>
+</li>
 </ul>
 </section>
 <section class="content" id="ID_1983584466">
@@ -504,43 +544,380 @@ public class WhatsHappeningApplication extends Application&lt;WhatsHappeningConf
 <ul>
 <li>DSL<a href="#/ID_936806254" class="link subsection"> &#8628;</a>
 </li>
+<li>&iquest;Otro enfoque?<a href="#/ID_1676493705" class="link subsection"> &#8628;</a>
+</li>
 </ul>
 </section>
 <section class="content" id="ID_936806254">
 <h4>DSL</h4>
+<ul>
+<li>
+<a href="https://github.com/mariogarcia/groovy-wizard" class="link external">https://github.com/mariogarcia/groovy-wizard</a>
+</li>
+<li>Yo mismo envie el primero pull request para a&ntilde;adir la opcion de insertar healthchecker en la aplicacion, os animo a ir haciendo crecer esta prueba de concepto, que no se diga que no nos gusta picar codigo :)</li>
+<li>Intentare explicarlo lo mejor posible<a href="#/ID_223584038" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_223584038">
+<h5>Intentare explicarlo lo mejor posible</h5>
+<ul>
+<li>Vision general de los elementos implicados<a href="#/ID_703325288" class="link subsection"> &#8628;</a>
+</li>
+<li>Core<a href="#/ID_1696702428" class="link subsection"> &#8628;</a>
+</li>
+<li>Example<a href="#/ID_1050175743" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_703325288">
+<h6>Vision general de los elementos implicados</h6>
+<ul>
+<li>Un imagen vale mas que mil palabras<a href="#/ID_1393599831" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1393599831">
+<h7>Un imagen vale mas que mil palabras</h7>
+<ul>
+<li></li>
+<li></li>
+</ul>
+<div class="illustrations w2">
+<a href="groovy-wizard-core.png" class="image" title=""><img src="groovy-wizard-core.png" alt=""></a><a href="groovy-wizard-example.png" class="image" title=""><img src="groovy-wizard-example.png" alt=""></a>
+</div>
+</section>
+<section class="content" id="ID_1696702428">
+<h6>Core</h6>
+<ul>
+<li>En este modulo se definen los elementos que haran comun, para cada una de las aplicaciones que implementemos, junto con la definicion de las anotaciones que haran la magia de la transformacion AST</li>
+<li>GroovyWizardApplication.groovy<a href="#/ID_141173844" class="link subsection"> &#8628;</a>
+</li>
+<li>GroovyWizardConfiguration.groovy<a href="#/ID_1694658190" class="link subsection"> &#8628;</a>
+</li>
+<li>GroovyWizardResourcesScript.groovy<a href="#/ID_95138487" class="link subsection"> &#8628;</a>
+</li>
+<li>SimpleJSON.groovy<a href="#/ID_1178271575" class="link subsection"> &#8628;</a>
+</li>
+<li>SimpleJSONAst.groovy<a href="#/ID_1424033433" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_141173844">
+<h7>GroovyWizardApplication.groovy</h7>
+<ul>
+<li>Esta clase genera la clase "application" que centraliza todo en Dropwizard</li>
+<li>Extendemos y usamos compileStatic<a href="#/ID_1457829049" class="link subsection"> &#8628;</a>
+</li>
+<li>Main y paso de argumentos<a href="#/ID_418935434" class="link subsection"> &#8628;</a>
+</li>
+<li>Inicializamos la clase de aplicacion con los elementos necesarios: resources, healthcheckers..<a href="#/ID_102488727" class="link subsection"> &#8628;</a>
+</li>
+<li>Cargamos los resources desde un fichero groovy donde los tenemos definidos...<a href="#/ID_111081932" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1457829049">
+<h8>Extendemos y usamos compileStatic</h8>
+<ul>
+<li>
+<pre>@CompileStatic
+class GroovyWizardApplication extends Application<groovywizardconfiguration></groovywizardconfiguration> {</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_418935434">
+<h8>Main y paso de argumentos</h8>
+<ul>
+<li>
+<pre>static void main(String[] args) {
+        new GroovyWizardApplication().run(['server'] as String[])
+    }</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_102488727">
+<h8>Inicializamos la clase de aplicacion con los elementos necesarios: resources, healthcheckers..</h8>
+<ul>
+<li>
+<pre>void initialize(Bootstrap<groovywizardconfiguration></groovywizardconfiguration> bootstrap) { }
+    void run(GroovyWizardConfiguration configuration, Environment environment) {
+        loadResources(configuration, environment).each { resource -&gt;
+           environment.jersey().register(resource)
+        }
+    }</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_111081932">
+<h8>Cargamos los resources desde un fichero groovy donde los tenemos definidos...</h8>
+<ul>
+<li>
+<pre>List?&gt; loadResources(
+        GroovyWizardConfiguration configuration,
+        Environment environment) {
+
+        InputStream resourcesStream = getClass().getResourceAsStream('/gw/app/Resources.groovy')
+        Reader resourcesReader = new InputStreamReader(resourcesStream)
+        CompilerConfiguration compilerConfiguration = new CompilerConfiguration()
+        compilerConfiguration.setScriptBaseClass(GroovyWizardResourcesScript.class.name)
+        Binding bindings = new Binding()
+
+        bindings.setVariable('configuration', configuration)
+        bindings.setVariable('environment', environment)
+
+        GroovyShell shell = new GroovyShell(getClass().classLoader, bindings, compilerConfiguration)
+
+        return (List?&gt;) shell.evaluate(resourcesReader)
+
+    }</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1694658190">
+<h7>GroovyWizardConfiguration.groovy</h7>
+<ul>
+<li>Esta clase centraliza la configuracion, por defecto se lee de un fichero "json" y necesitas una clase java que mapee los atributos, aqui lo leemos de un fichero groovy y los atributos se mapean directamente usan las propiedades dinamicas del lenguaje.</li>
+<li>Extendemos<a href="#/ID_916384354" class="link subsection"> &#8628;</a>
+</li>
+<li>Cargamos las propiedades<a href="#/ID_1949425541" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_916384354">
+<h8>Extendemos</h8>
+<ul>
+<li>
+<pre>@CompileStatic
+class GroovyWizardConfiguration extends Configuration {</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1949425541">
+<h8>Cargamos las propiedades</h8>
+<ul>
+<li>
+<pre>    Map configuration = [:]
+
+    Object propertyMissing(final String name) {
+        configuration[name] ?: getFreshValue(name)
+    }
+
+    Object getFreshValue(final String key) {
+        URL resourceURL =
+            this.getClass().classLoader.getResource('gw/app/Config.groovy')
+        configuration = new ConfigSlurper().parse(resourceURL)
+        return configuration[key]
+    }</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_95138487">
+<h7>GroovyWizardResourcesScript.groovy</h7>
+<ul>
+<li>Aqui de alguna manera solo se define la estructura del script groovy que va a contener los resources, porque como hemos visto la lectura se realiza en GroovyWizardApplication.loadResources</li>
+<li>abstract class GroovyWizardResourcesScript extends Script {
+
+    def resources(Closure closure) {
+        this.binding.with(closure)
+    }
+
+}</li>
+</ul>
+</section>
+<section class="content" id="ID_1178271575">
+<h7>SimpleJSON.groovy</h7>
+<ul>
+<li>
+<pre>@Target([ElementType.TYPE])
+@Retention(RetentionPolicy.SOURCE)
+@GroovyASTTransformationClass(['gw.ast.SimpleJSONAst'])
+@interface SimpleJSON {
+    String value() default '/'
+}      
+    </pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1424033433">
+<h7>SimpleJSONAst.groovy</h7>
+<ul>
+<li>
+<pre>void visit(ASTNode[] nodes, SourceUnit sourceUnit) {
+        if (!nodes) return
+        if(nodes.length  2) return
+        if(!(nodes[0] instanceof AnnotationNode)) return
+        if(!(nodes[0].classNode.name == SimpleJSON.class.name)) return
+        if(!(nodes[1] instanceof ClassNode)) return
+
+        AnnotationNode annotationNode = nodes[0]
+        ClassNode annotatedClassNode = nodes[1]
+
+        String path = annotationNode.getMember('value').text
+        List<methodnode></methodnode> allMethods = annotatedClassNode.methods.findAll { !it.isSynthetic() }
+
+        if (!allMethods) {
+            sourceUnit.addError(new SyntaxException('Micro-Service needs at least one method!', 0, 0))
+        }
+        if (allMethods?.size() &gt; 1) {
+            sourceUnit.addError(new SyntaxException('Micro-Service ambiguity: Only one method allowed!',0, 0))
+        }
+
+        annotatedClassNode.addAnnotations([
+            buildPathAnnotation(path),
+            buildContentTypeAnnotation()
+        ])
+
+        MethodNode methodNode = allMethods.first()
+        methodNode.addAnnotation(
+            new AnnotationNode(
+                ClassHelper.make(javax.ws.rs.GET)
+            )
+        )
+
+    }</pre>
+</li>
+<li>
+<pre>AnnotationNode buildPathAnnotation(String path) {
+        AnnotationNode annotationNode =
+            new AnnotationNode(ClassHelper.make(javax.ws.rs.Path))
+        annotationNode.addMember('value', new ConstantExpression(path))
+        return annotationNode
+    }</pre>
+</li>
+<li>
+<pre>AnnotationNode buildContentTypeAnnotation() {
+        AnnotationNode annotationNode =
+            new AnnotationNode(ClassHelper.make(javax.ws.rs.Produces))
+        annotationNode.addMember(
+            'value',
+            new PropertyExpression(
+                new ClassExpression(ClassHelper.make(javax.ws.rs.core.MediaType)),
+                new ConstantExpression('APPLICATION_JSON')
+            )
+        )
+        return annotationNode
+    }</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1050175743">
+<h6>Example</h6>
+<ul>
+<li>Aqui se monta la aplicacion de ejemplo, que sera junto con el core un "submodule" que se compilan juntos gracias a gradle</li>
+<li>HelloGroovyResource.groovy<a href="#/ID_1985173970" class="link subsection"> &#8628;</a>
+</li>
+<li>HelloWorldResource.groovy<a href="#/ID_1424057944" class="link subsection"> &#8628;</a>
+</li>
+<li>Config.groovy<a href="#/ID_947716292" class="link subsection"> &#8628;</a>
+</li>
+<li>Resources.groovy<a href="#/ID_1488569576" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1985173970">
+<h7>HelloGroovyResource.groovy</h7>
+<ul>
+<li>Version groovy del resource</li>
+<li>
+<pre>import gw.ast.SimpleJSON
+
+@SimpleJSON('/hello-groovy')
+class HelloGroovyResource {
+
+    String sayHello() {
+        return "Hello from groovy"
+    }
+
+}      
+    </pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1424057944">
+<h7>HelloWorldResource.groovy</h7>
+<ul>
+<li>Version java del resource</li>
+<li>
+<pre>@Path('/hello-world')
+@Produces(MediaType.APPLICATION_JSON)
+class HelloWorldResource {
+
+    final String version
+
+    HelloWorldResource(final String applicationVersion) {
+        this.version = applicationVersion
+    }
+
+    @GET
+    String sayHello() {
+        return "This application has version [${this.version}]"
+    }
+
+}
+
+</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_947716292">
+<h7>Config.groovy</h7>
+<ul>
+<li>version = 1.0</li>
+</ul>
+</section>
+<section class="content" id="ID_1488569576">
+<h7>Resources.groovy</h7>
+<ul>
+<li>
+<pre>import gw.res.HelloWorldResource
+import gw.res.HelloGroovyResource
+
+resources {
+&nbsp;&nbsp;&nbsp;&nbsp;return [
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new HelloWorldResource("${configuration.version}"),
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new HelloGroovyResource()
+&nbsp;&nbsp;&nbsp;&nbsp;]
+}</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1676493705">
+<h4>&iquest;Otro enfoque?</h4>
 <ul>
 <li>Primera cosa a DSLizar<a href="#/ID_964864542" class="link subsection"> &#8628;</a>
 </li>
 <li>La configuracion que se coja directamente del fichero<a href="#/ID_1587663464" class="link subsection"> &#8628;</a>
 </li>
 <li>Modelizar los rest (XXXResource) del estilo a ratpack</li>
-<li>
-<a href="https://github.com/mariogarcia/groovy-wizard" class="link external">https://github.com/mariogarcia/groovy-wizard</a>
-</li>
 </ul>
 </section>
 <section class="content" id="ID_964864542">
 <h5>Primera cosa a DSLizar</h5>
 <ul>
-<li>- XXXApplication.run
+<li>
+<pre>- XXXApplication.run
 final XXXResource resource = new XXXResource(param1, param2);
-    environment.jersey().register(resource);
+&nbsp;&nbsp;&nbsp;&nbsp;environment.jersey().register(resource);
 
-    final XXXHealthCheck healthCheck = new XXXHealthCheck(param1);
-    environment.healthChecks().register("template", healthCheck);</li>
-<li>enviroment {
-jersey {
-XXXResource {
-param1,
-param2
-}
-}
-healthChecks {
-XXXHealthCheck {
-param1
-}
-}
-}</li>
+&nbsp;&nbsp;&nbsp;&nbsp;final XXXHealthCheck healthCheck = new XXXHealthCheck(param1);
+&nbsp;&nbsp;&nbsp;&nbsp;environment.healthChecks().register("template", healthCheck);</pre>
+</li>
+<li>
+<pre>enviroment {
+    jersey {
+        XXXResource {
+            param1,
+            param2
+        }
+    }
+    healthChecks {
+        XXXHealthCheck {
+            param1
+        }
+    }
+}</pre>
+</li>
 </ul>
 </section>
 <section class="content" id="ID_1587663464">
@@ -552,11 +929,148 @@ param1
 <section class="content" id="ID_898401756">
 <h3>Cliente Android</h3>
 <ul>
-<li>
-<a href="https://code.google.com/p/maven-android-plugin/wiki/GettingStarted" class="link external">https://code.google.com/p/maven-android-plugin/wiki/GettingStarted</a>
+<li>Para crear un proyecto Android, NO VAMOS A USAR el Android Studio, no lo vamos a construir con Gradle, vamos a usar maven (otra vez ;) usando los archetypes que tenemos disponibles junto con su plugin para Android.</li>
+<li>Elementos necesarios<a href="#/ID_1226790105" class="link subsection"> &#8628;</a>
+</li>
+<li>Pasos<a href="#/ID_1667544414" class="link subsection"> &#8628;</a>
+</li>
+<li>Proximos pasos<a href="#/ID_1112105564" class="link subsection"> &#8628;</a>
 </li>
 </ul>
 </section>
+<section class="content" id="ID_1226790105">
+<h4>Elementos necesarios</h4>
+<ul>
+<li>Usar un maven archetype para crear la estructura del proyecto: http://stand.spree.de/wiki_details_maven_archetypes</li>
+<li>Ese arquetipo usara el plugin: https://code.google.com/p/maven-android-plugin/wiki/GettingStarted</li>
+<li>Integracion con Eclipse: http://rgladwell.github.io/m2e-android/</li>
+</ul>
+</section>
+<section class="content" id="ID_1667544414">
+<h4>Pasos</h4>
+<ul>
+<li>Vamos a detallar los pasos necesarios</li>
+<li>Usando el archetype de Android para maven<a href="#/ID_944944355" class="link subsection"> &#8628;</a>
+</li>
+<li>Necesitamos usar el emulador de android con una SD<a href="#/ID_1227707207" class="link subsection"> &#8628;</a>
+</li>
+<li>Remontar sistema de ficheros como root<a href="#/ID_914269523" class="link subsection"> &#8628;</a>
+</li>
+<li>Mover ficheros a emulador android desde linea de comandos...<a href="#/ID_1719667781" class="link subsection"> &#8628;</a>
+</li>
+<li>Share and intents...<a href="#/ID_530860464" class="link subsection"> &#8628;</a>
+</li>
+<li>Gestion de tareas en segundo plano<a href="#/ID_476164776" class="link subsection"> &#8628;</a>
+</li>
+<li>Para realizar el upload file en android<a href="#/ID_1267693114" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_944944355">
+<h5>Usando el archetype de Android para maven</h5>
+<ul>
+<li>
+<pre>mvn archetype:generate \
+  -DarchetypeArtifactId=android-quickstart \
+  -DarchetypeGroupId=de.akquinet.android.archetypes \
+  -DarchetypeVersion=1.0.11 \
+  -DgroupId=com.accreativos \
+  -DartifactId=whatshappening</pre>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1227707207">
+<h5>Necesitamos usar el emulador de android con una SD</h5>
+<ul>
+<li>mksdcard 256M sdcard_dev.iso</li>
+<li>On menu Run -&gt; Run Configurations, click on Android Configuration on the left tree menu, click on tab Target on the right pane.</li>
+<li>You will see at the bottom: &ldquo;Additional Emulator Commandline Options&rdquo; and an Input/Edit box below: -sdcard [sdcard location]</li>
+</ul>
+</section>
+<section class="content" id="ID_914269523">
+<h5>Remontar sistema de ficheros como root</h5>
+<ul>
+<li>$./adb shell</li>
+<li>$su</li>
+<li>mount -o rw,remount rootfs /</li>
+<li>chmod 777 /mnt/sdcard</li>
+<li>exit</li>
+</ul>
+</section>
+<section class="content" id="ID_1719667781">
+<h5>Mover ficheros a emulador android desde linea de comandos...</h5>
+<ul>
+<li>
+<a href="http://jimmithy.tumblr.com/post/5389920961/moving-files-to-the-android-emulator-via-command-line" class="link external">http://jimmithy.tumblr.com/post/5389920961/moving-files-to-the-android-emulator-via-command-line</a>
+</li>
+<li>
+<p>
+      adb push image.jpg /mnt/sdcard/
+    </p>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_530860464">
+<h5>Share and intents...</h5>
+<ul>
+<li>Los intents de android son los elementos de comunicacion entre "programas" en android, en este caso lo vamos a usar para comunicar el visor de iamgenes de la galeria, con nuestra aplicacion cliente. Se puede hacer declarativo (en el AndroidManifest.xml) o programaticamente.</li>
+<li>
+<pre>&lt;intent-filter&gt;
+	&lt;action android:name="android.intent.action.SEND" /&gt;
+	&lt;category android:name="android.intent.category.DEFAULT" /&gt;
+	&lt;data android:mimeType="image/*" /&gt;
+&lt;/intent-filter&gt;</pre>
+</li>
+<li>Documentacion de apoyo<a href="#/ID_358029192" class="link subsection"> &#8628;</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_358029192">
+<h6>Documentacion de apoyo</h6>
+<ul>
+<li>
+<a href="http://developer.android.com/training/sharing/send.html" class="link external">http://developer.android.com/training/sharing/send.html</a>
+</li>
+<li>
+<a href="https://developer.android.com/training/secure-file-sharing/share-file.html" class="link external">https://developer.android.com/training/secure-file-sharing/share-file.html</a>
+</li>
+<li>
+<a href="http://code.tutsplus.com/tutorials/android-sdk-implement-a-share-intent--mobile-8433" class="link external">http://code.tutsplus.com/tutorials/android-sdk-implement-a-share-intent--mobile-8433</a>
+</li>
+<li>
+<a href="http://android-developers.blogspot.com.es/2012/02/share-with-intents.html" class="link external">http://android-developers.blogspot.com.es/2012/02/share-with-intents.html</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_476164776">
+<h5>Gestion de tareas en segundo plano</h5>
+<ul>
+<li>
+<a href="http://www.codeproject.com/Articles/162201/Painless-AsyncTask-and-ProgressDialog-Usage" class="link external">http://www.codeproject.com/Articles/162201/Painless-AsyncTask-and-ProgressDialog-Usage</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1267693114">
+<h5>Para realizar el upload file en android</h5>
+<ul>
+<li>
+<a href="http://androidexample.com/Upload_File_To_Server_-_Android_Example/index.php?view=article_discription&amp;aid=83&amp;aaid=106" class="link external">http://androidexample.com/Upload_File_To_Server_-_Android_Example/index.php?view=article_discription&amp;aid=83&amp;aaid=106</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_1112105564">
+<h4>Proximos pasos</h4>
+<ul>
+<li>Libreria upload: https://github.com/alexbbb/android-upload-service</li>
+<li>http://melix.github.io/blog/2014/06/grooid.html</li>
+</ul>
+</section>
+</section>
+<section class="content" id="ID_944183479">
+<h2>What next?</h2>
+<ul>
+<li>Se admiten fork pero se prefieren para pull request ;)</li>
+</ul>
 </section>
 <!--new subsection-->
 <section>
@@ -577,6 +1091,8 @@ param1
 </li>
 <li>DropWizard<a href="#/ID_364115565" class="link subsection"> &#8628;</a>
 </li>
+<li>Android<a href="#/ID_210741652" class="link subsection"> &#8628;</a>
+</li>
 </ul>
 </section>
 <section class="content" id="ID_271398696">
@@ -596,6 +1112,9 @@ param1
 </li>
 <li>
 <a href="http://www.amazon.com/Groovy-Domain-Specific-Languages-Fergal-Dearle/dp/184719690X" class="link external">http://www.amazon.com/Groovy-Domain-Specific-Languages-Fergal-Dearle/dp/184719690X</a>
+</li>
+<li>
+<a href="https://github.com/mariogarcia/groovy-wizard" class="link external">https://github.com/mariogarcia/groovy-wizard</a>
 </li>
 </ul>
 </section>
@@ -625,6 +1144,32 @@ param1
 <ul>
 <li>
 <a href="https://github.com/dropwizard/dropwizard/tree/master/dropwizard-example" class="link external">https://github.com/dropwizard/dropwizard/tree/master/dropwizard-example</a>
+</li>
+</ul>
+</section>
+<section class="content" id="ID_210741652">
+<h4>Android</h4>
+<ul>
+<li>
+<a href="http://stand.spree.de/wiki_details_maven_archetypes" class="link external">
+<p>
+      http://stand.spree.de/wiki_details_maven_archetypes
+    </p>
+</a>
+</li>
+<li>
+<a href="https://code.google.com/p/maven-android-plugin/wiki/GettingStarted" class="link external">
+<p>
+      https://code.google.com/p/maven-android-plugin/wiki/GettingStarted
+    </p>
+</a>
+</li>
+<li>
+<a href="http://rgladwell.github.io/m2e-android/" class="link external">
+<p>
+      http://rgladwell.github.io/m2e-android/
+    </p>
+</a>
 </li>
 </ul>
 </section>
