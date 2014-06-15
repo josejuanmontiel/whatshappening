@@ -1,11 +1,14 @@
 package com.accreativos.whatshappening;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;
-import org.hibernate.validator.constraints.NotEmpty;
+import io.dropwizard.db.DataSourceFactory;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class WhatsHappeningConfiguration extends Configuration {
     @NotEmpty
@@ -14,6 +17,15 @@ public class WhatsHappeningConfiguration extends Configuration {
     @NotEmpty
     private String defaultName = "Stranger";
 
+    @Valid
+    @NotNull
+    @JsonProperty
+    private DataSourceFactory database = new DataSourceFactory();
+
+    public DataSourceFactory getDataSourceFactory() {
+        return database;
+    }
+    
     @JsonProperty
     public String getTemplate() {
         return template;
