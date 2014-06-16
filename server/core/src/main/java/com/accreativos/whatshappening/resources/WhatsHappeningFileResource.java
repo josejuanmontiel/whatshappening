@@ -55,7 +55,7 @@ public class WhatsHappeningFileResource {
 		String ip = request.getRemoteAddr();
 		String fileName = fileDetail.getFileName();
 		
-		dao.insert(fileName, outputPath, ip, DateTime.now(), 1);
+		dao.insert(fileName, tempname, ip, DateTime.now(), 1);
 
 		copyCompletely(stream, new FileOutputStream(outputPath));
 
