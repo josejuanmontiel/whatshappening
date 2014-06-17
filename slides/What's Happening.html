@@ -91,7 +91,7 @@
 <ul>
 <li>
 <p>
-      El nivel de las ultimas charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">penultima</a>&nbsp; tengo que decir que @mgdelacroix me inspiro bastante, por el estilo y por lo que conto. Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.
+      El nivel de las charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">penultima</a>&nbsp; tengo que decir que @mgdelacroix me inspiro bastante, por el estilo y por lo que conto. Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.
     </p>
 </li>
 </ul>
@@ -101,7 +101,7 @@
 <ul>
 <li>
 <p>
-      La de Ratpack ya estaba cogida, asi que tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios @madridgug</a>, me decidi por intentarlo con Dropwizard y despues de mucho mirar y comentarlo @marioggar antes de su <a href="http://www.meetup.com/madrid-gug/events/181236742/">workshop</a>, si que se habia hablado de Dropwizard en los circulos de Groovy aunque no es un framework groovy. Pero bueno, eso no me iba a detener, asi que la idea era intentar enforcarlo al DSL... me perdonen ;) si no hay mucho groovy...
+      La de Ratpack habria estado genial pero... tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios @madridgug</a>, me decidi por intentarlo con Dropwizard y despues de mucho mirar y comentarlo @marioggar antes de su <a href="http://www.meetup.com/madrid-gug/events/181236742/">workshop</a>, si que se habia hablado de Dropwizard en los circulos de Groovy aunque no es un framework groovy. Pero bueno, eso no me iba a detener, asi que la idea era intentar enforcarlo al DSL...
     </p>
 </li>
 </ul>
@@ -109,14 +109,14 @@
 <section class="content" id="ID_493698158">
 <h4>Como</h4>
 <ul>
-<li>El enfoque es el siguiente: ver que ofrece dropwizar (con maven, java y todo esas cosas que tanto gustan ;) para ver como poder simplificar el desarrollo con gradle, groovy y anotaciones...Espero que les guste ;)</li>
+<li>Pues la receta de la charla es la siguiente. Ingredientes: 33% de java, 33% de groovy, 33% de android, y puede contener trazas de Maven, asi que ojo a los alergicos. Presentacion: en bandeja y frio. Espero que les guste ;)</li>
 </ul>
 </section>
 <section class="content" id="ID_1404292888">
 <h3>&iquest;Adelante?</h3>
 <ul>
-<li>Soy @accreativos, programador java (con ganas de groovy), marido y padre de 2 ni&ntilde;as (siempre quise decir eso)</li>
-<li>Agradecer la ayuda de @marioggar para preparar esto</li>
+<li>Soy Jose Juan Montiel (@accreativos), programador java (con ganas de groovy), marido y padre de 2 ni&ntilde;as</li>
+<li>Agradecer la ayuda de @marioggar la parte groovy</li>
 <li>Y el codigo de todo lo que voy a contar: https://github.com/josejuanmontiel/whatshappening</li>
 </ul>
 </section>
@@ -133,7 +133,7 @@
 <section class="content" id="ID_1475508722">
 <h3>WhatsHappening</h3>
 <ul>
-<li>Quieres saber como de rapido viaja la ultima broma por whatsapp? Cual es el meme de moda? Aguirre a la carrera, el Real Madrid gana en el descuento, el rey abdica, espa&ntilde;a pierde con holanda... Estaria genial una aplicacacion para ver el "trending topic" de whatsapp. Has recibido una imagen graciosa, compartela con la aplicacion "whatshappening" y sabras si has sido el primero en recibirla o el un millon :D Acediendo a la web podras ver el historial de noticias, en base a los memes, como viajan, por donde se mueven (hora y lugar)  sobre un mapa y cuanto duran algunos que son mas atemporales... una prueba de concepto a implementar.</li>
+<li>Quieres saber como de rapido viaja la ultima broma por whatsapp? Cual es el meme de moda? Aguirre a la carrera, el Real Madrid gana en el descuento, el rey abdica, espa&ntilde;a pierde con holanda... Estaria genial una aplicacacion para ver el "trending topic" de whatsapp. Has recibido una imagen graciosa, compartela con la aplicacion "whatshappening" y sabras si has sido el primero en recibirla o el un millon :D Acediendo a la web podras ver el historial de noticias, en base a los memes, como viajan, por donde se mueven (hora y lugar) sobre un mapa y cuanto duran algunos que son mas atemporales... una prueba de concepto a implementar.</li>
 </ul>
 </section>
 </section>
@@ -142,7 +142,7 @@
 <section class="content" id="ID_1376484677">
 <h2>Solucion</h2>
 <ul>
-<li>Vamos a desarrollar una solucion iterativa, donde primero usaremos dropwizar de la manera tradicional que sus creadores recomiendan, con java, maven y todo el pack. Despues veremos como ya hay "templates" para maven que montan la estructura basica, y luego como tambien tenemos templates para lazybones, esto nos dara pie a Groovy. Despues, gracias al aporte de @marioggar veremos como construir un DSL mediante transformaciones AST para que usando una anotacion simplifiquemos los elementos necesarios para tener un resource. Por ultimo, como bola extra, mostrare un cliente Android de este microservicio.</li>
+<li>Vamos a desarrollar una solucion iterativa, donde primero usaremos dropwizar de la manera tradicional que sus creadores recomiendan, con java, maven y todo el pack. Despues veremos como tenemos templates para lazybones, esto nos dara pie a Groovy. Gracias al aporte de @marioggar veremos como construir un DSL mediante transformaciones AST para que usando una anotacion simplifiquemos los elementos necesarios para tener un resource. Por ultimo, como bola extra, mostrare un cliente Android de este microservicio.</li>
 <li>Dropwizard<a href="#/ID_710779118" class="link subsection"> &#8628;</a>
 </li>
 <li>Lazybones<a href="#/ID_1080509491" class="link subsection"> &#8628;</a>
@@ -838,26 +838,6 @@ class HelloGroovyResource {
 <h7>HelloWorldResource.groovy</h7>
 <ul>
 <li>Version java del resource</li>
-<li>
-<pre>@Path('/hello-world')
-@Produces(MediaType.APPLICATION_JSON)
-class HelloWorldResource {
-
-    final String version
-
-    HelloWorldResource(final String applicationVersion) {
-        this.version = applicationVersion
-    }
-
-    @GET
-    String sayHello() {
-        return "This application has version [${this.version}]"
-    }
-
-}
-
-</pre>
-</li>
 </ul>
 </section>
 <section class="content" id="ID_947716292">

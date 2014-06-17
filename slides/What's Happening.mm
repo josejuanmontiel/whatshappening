@@ -54,7 +54,7 @@
 <edge COLOR="#0000ff"/>
 <node TEXT="Intro..." ID="ID_1073758459" CREATED="1402828446024" MODIFIED="1402828753708">
 <node TEXT="Cuando" ID="ID_1334654494" CREATED="1402828625117" MODIFIED="1402828716330">
-<node ID="ID_872777713" CREATED="1402406944788" MODIFIED="1402828308988"><richcontent TYPE="NODE">
+<node ID="ID_872777713" CREATED="1402406944788" MODIFIED="1402949843022"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -62,15 +62,16 @@
   </head>
   <body>
     <p>
-      El nivel de las ultimas charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">penultima</a>&#160; tengo que decir que @mgdelacroix me inspiro bastante, por el estilo y por lo que conto. Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.
+      El nivel de las charlas en @madridgug ha ido aumentando en los ultimos meses (eso o yo cada vez le saco mas partido) y en la <a href="https://www.youtube.com/watch?v=vTxdTkZtWMg">penultima</a>&#160; tengo que decir que @mgdelacroix me inspiro bastante, por el estilo y por lo que conto. Asi que aunque profesionalmente no me dedico al mundo Groovy, me propuse preparar una charla... que por lo menos me sirviera para investigar.
     </p>
   </body>
 </html>
+
 </richcontent>
 </node>
 </node>
 <node TEXT="Porqu&#xe9;" ID="ID_338691539" CREATED="1402828634396" MODIFIED="1402828732486">
-<node ID="ID_208075759" CREATED="1402828309007" MODIFIED="1402828918239"><richcontent TYPE="NODE">
+<node ID="ID_208075759" CREATED="1402828309007" MODIFIED="1402949966149"><richcontent TYPE="NODE">
 
 <html>
   <head>
@@ -78,7 +79,7 @@
   </head>
   <body>
     <p>
-      La de Ratpack ya estaba cogida, asi que tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios @madridgug</a>, me decidi por intentarlo con Dropwizard y despues de mucho mirar y comentarlo @marioggar antes de su <a href="http://www.meetup.com/madrid-gug/events/181236742/">workshop</a>, si que se habia hablado de Dropwizard en los circulos de Groovy aunque no es un framework groovy. Pero bueno, eso no me iba a detener, asi que la idea era intentar enforcarlo al DSL... me perdonen ;) si no hay mucho groovy...
+      La de Ratpack habria estado genial pero... tras unas consultas al <a href="https://groups.google.com/forum/#!topic/madrid-gug/vu8YMZz3UMY">grupo de usuarios @madridgug</a>, me decidi por intentarlo con Dropwizard y despues de mucho mirar y comentarlo @marioggar antes de su <a href="http://www.meetup.com/madrid-gug/events/181236742/">workshop</a>, si que se habia hablado de Dropwizard en los circulos de Groovy aunque no es un framework groovy. Pero bueno, eso no me iba a detener, asi que la idea era intentar enforcarlo al DSL...
     </p>
   </body>
 </html>
@@ -87,24 +88,24 @@
 </node>
 </node>
 <node TEXT="Como" ID="ID_493698158" CREATED="1402828641877" MODIFIED="1402828734908">
-<node TEXT="El enfoque es el siguiente: ver que ofrece dropwizar (con maven, java y todo esas cosas que tanto gustan ;) para ver como poder simplificar el desarrollo con gradle, groovy y anotaciones...Espero que les guste ;)" ID="ID_497909178" CREATED="1402828318499" MODIFIED="1402828947847"/>
+<node TEXT="Pues la receta de la charla es la siguiente. Ingredientes: 33% de java, 33% de groovy, 33% de android, y puede contener trazas de Maven, asi que ojo a los alergicos. Presentacion: en bandeja y frio. Espero que les guste ;)" ID="ID_497909178" CREATED="1402828318499" MODIFIED="1402950140540"/>
 </node>
 </node>
 <node TEXT="&#xbf;Adelante?" ID="ID_1404292888" CREATED="1402478134124" MODIFIED="1402828440516">
-<node TEXT="Soy @accreativos, programador java (con ganas de groovy), marido y padre de 2 ni&#xf1;as (siempre quise decir eso)" ID="ID_1866923962" CREATED="1399413817398" MODIFIED="1402478301239"/>
-<node TEXT="Agradecer la ayuda de @marioggar para preparar esto" ID="ID_123976478" CREATED="1402350882848" MODIFIED="1402828802318"/>
+<node TEXT="Soy Jose Juan Montiel (@accreativos), programador java (con ganas de groovy), marido y padre de 2 ni&#xf1;as" ID="ID_1866923962" CREATED="1399413817398" MODIFIED="1402950190738"/>
+<node TEXT="Agradecer la ayuda de @marioggar la parte groovy" ID="ID_123976478" CREATED="1402350882848" MODIFIED="1402950261242"/>
 <node TEXT="Y el codigo de todo lo que voy a contar: https://github.com/josejuanmontiel/whatshappening" ID="ID_1390037432" CREATED="1402478252849" MODIFIED="1402478253998"/>
 </node>
 </node>
 <node TEXT="Necesidad" POSITION="right" ID="ID_96460674" CREATED="1399413828187" MODIFIED="1402351578833">
 <edge COLOR="#00ff00"/>
 <node TEXT="WhatsHappening" ID="ID_1475508722" CREATED="1399413854060" MODIFIED="1399413859510">
-<node TEXT="Quieres saber como de rapido viaja la ultima broma por whatsapp? Cual es el meme de moda? Aguirre a la carrera, el Real Madrid gana en el descuento, el rey abdica, espa&#xf1;a pierde con holanda... Estaria genial una aplicacacion para ver el &quot;trending topic&quot; de whatsapp. Has recibido una imagen graciosa, compartela con la aplicacion &quot;whatshappening&quot; y sabras si has sido el primero en recibirla o el un millon :D Acediendo a la web podras ver el historial de noticias, en base a los memes, como viajan, por donde se mueven (hora y lugar)  sobre un mapa y cuanto duran algunos que son mas atemporales... una prueba de concepto a implementar." ID="ID_1473556229" CREATED="1399413903764" MODIFIED="1402829154528"/>
+<node TEXT="Quieres saber como de rapido viaja la ultima broma por whatsapp? Cual es el meme de moda? Aguirre a la carrera, el Real Madrid gana en el descuento, el rey abdica, espa&#xf1;a pierde con holanda... Estaria genial una aplicacacion para ver el &quot;trending topic&quot; de whatsapp. Has recibido una imagen graciosa, compartela con la aplicacion &quot;whatshappening&quot; y sabras si has sido el primero en recibirla o el un millon :D Acediendo a la web podras ver el historial de noticias, en base a los memes, como viajan, por donde se mueven (hora y lugar) sobre un mapa y cuanto duran algunos que son mas atemporales... una prueba de concepto a implementar." ID="ID_1473556229" CREATED="1399413903764" MODIFIED="1402950324737"/>
 </node>
 </node>
 <node TEXT="Solucion" POSITION="right" ID="ID_1376484677" CREATED="1399414082864" MODIFIED="1399414087781">
 <edge COLOR="#ff00ff"/>
-<node TEXT="Vamos a desarrollar una solucion iterativa, donde primero usaremos dropwizar de la manera tradicional que sus creadores recomiendan, con java, maven y todo el pack. Despues veremos como ya hay &quot;templates&quot; para maven que montan la estructura basica, y luego como tambien tenemos templates para lazybones, esto nos dara pie a Groovy. Despues, gracias al aporte de @marioggar veremos como construir un DSL mediante transformaciones AST para que usando una anotacion simplifiquemos los elementos necesarios para tener un resource. Por ultimo, como bola extra, mostrare un cliente Android de este microservicio." ID="ID_1837194200" CREATED="1402405003641" MODIFIED="1402406624195"/>
+<node TEXT="Vamos a desarrollar una solucion iterativa, donde primero usaremos dropwizar de la manera tradicional que sus creadores recomiendan, con java, maven y todo el pack. Despues veremos como tenemos templates para lazybones, esto nos dara pie a Groovy. Gracias al aporte de @marioggar veremos como construir un DSL mediante transformaciones AST para que usando una anotacion simplifiquemos los elementos necesarios para tener un resource. Por ultimo, como bola extra, mostrare un cliente Android de este microservicio." ID="ID_1837194200" CREATED="1402405003641" MODIFIED="1402950464806"/>
 <node TEXT="Dropwizard" ID="ID_710779118" CREATED="1399414099350" MODIFIED="1401368588790">
 <node TEXT="We recommend you use Maven for new Dropwizard applications. If you&#x2019;re a big Ant / Ivy, Buildr, Gradle, SBT, Leiningen, or Gant fan, that&#x2019;s cool, but we use Maven and we&#x2019;ll be using Maven as we go through this example application. If you have any questions..." ID="ID_812672641" CREATED="1401368652569" MODIFIED="1402480023382"/>
 <node TEXT="https://dropwizard.github.io/dropwizard/getting-started.html" ID="ID_479157407" CREATED="1401368672581" MODIFIED="1402479339373" LINK="https://dropwizard.github.io/dropwizard/getting-started.html"/>
@@ -764,36 +765,6 @@ class HelloGroovyResource {
 </node>
 <node TEXT="HelloWorldResource.groovy" ID="ID_1424057944" CREATED="1402831498698" MODIFIED="1402831498698">
 <node TEXT="Version java del resource" ID="ID_1065114411" CREATED="1402833913475" MODIFIED="1402833936933"/>
-<node ID="ID_1832759558" CREATED="1402833953507" MODIFIED="1402834048748"><richcontent TYPE="NODE">
-
-<html>
-  <head>
-    
-  </head>
-  <body>
-    <pre>@Path('/hello-world')
-@Produces(MediaType.APPLICATION_JSON)
-class HelloWorldResource {
-
-    final String version
-
-    HelloWorldResource(final String applicationVersion) {
-        this.version = applicationVersion
-    }
-
-    @GET
-    String sayHello() {
-        return &quot;This application has version [${this.version}]&quot;
-    }
-
-}
-
-</pre>
-  </body>
-</html>
-
-</richcontent>
-</node>
 </node>
 <node TEXT="Config.groovy" ID="ID_947716292" CREATED="1402831521143" MODIFIED="1402831521143">
 <node TEXT="version = 1.0" ID="ID_1218275757" CREATED="1402834000393" MODIFIED="1402834000393"/>
