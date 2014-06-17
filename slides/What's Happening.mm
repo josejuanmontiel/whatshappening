@@ -947,6 +947,10 @@ final XXXResource resource = new XXXResource(param1, param2);
 </node>
 <node TEXT="What next?" POSITION="right" ID="ID_944183479" CREATED="1402831533868" MODIFIED="1402831539559">
 <edge COLOR="#ffff00"/>
+<node TEXT="" ID="ID_460773734" CREATED="1403012644098" MODIFIED="1403012656096">
+<hook URI="whatshappening.png" SIZE="0.91463417" NAME="ExternalObject"/>
+</node>
+<node TEXT="http://whatshappening.no-ip.org/list" ID="ID_843354633" CREATED="1403013095332" MODIFIED="1403013095332" LINK="http://whatshappening.no-ip.org/list"/>
 <node TEXT="Se admiten fork pero se prefieren para pull request ;)" ID="ID_1919185198" CREATED="1402831543550" MODIFIED="1402831560918"/>
 </node>
 <node TEXT="Para esta presentacion" POSITION="right" ID="ID_557388051" CREATED="1399414213375" MODIFIED="1399414220503">
