@@ -1,0 +1,23 @@
+SIFT - http://en.wikipedia.org/wiki/Scale-invariant_feature_transform
+SURF - http://en.wikipedia.org/wiki/SURF
+
+
+Implementaciones
+	- 2004 - http://www.cs.ubc.ca/~lowe/keypoints/
+	- SIFT - http://fly.mpi-cbg.de/~saalfeld/Projects/
+	- OTRO SIFT: http://www.jidul.com/wp/tools/sift-algorithm/?lang=en
+	- SURF - http://www.stromberglabs.com/posts/3/jopensurf
+
+
+Librerias interesantes
+	- https://github.com/axtimwalde/mpicbg
+	- https://code.google.com/p/jfeaturelib/
+		*** Ejemplo: https://code.google.com/p/jopensurf/source/browse/src/com/stromberglabs/jopensurf/SurfCompare.java
+
+Otros
+	- http://phash.org/
+	- Usado por whatsapp duplicates: http://sourceforge.net/projects/opencvlibrary/
+
+Webs dedicadas a la comparacion de imagenes...
+	- http://tineye.com/faq#how
+	- http://services.tineye.com/
