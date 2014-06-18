@@ -8,6 +8,7 @@ public class File {
 	private String pathToFile;
 	private String ip;
 	private DateTime time;
+	private byte[] surfinterestpoint;
 	private int repeated;
 
 	public String getFileName() {
@@ -42,6 +43,14 @@ public class File {
 		this.time = time;
 	}
 
+	public byte[] getSurfinterestpoint() {
+		return surfinterestpoint;
+	}
+	
+	public void setSurfinterestpoint(byte[] surfinterestpoint) {
+		this.surfinterestpoint = surfinterestpoint;
+	}
+	
 	public int getRepeated() {
 		return repeated;
 	}
@@ -53,12 +62,13 @@ public class File {
 	public File() {
 	}
 
-	public File(String fileName, String pathToFile, String ip, DateTime time, int repeated) {
+	public File(String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated) {
 		super();
 		this.fileName = fileName;
 		this.pathToFile = pathToFile;
 		this.ip = ip;
 		this.time = time;
+		this.surfinterestpoint = surfinterestpoint;
 		this.repeated = repeated;
 	}
 
