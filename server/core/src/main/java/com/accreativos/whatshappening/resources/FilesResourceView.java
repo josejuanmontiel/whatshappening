@@ -23,7 +23,7 @@ public class FilesResourceView {
 
 	@GET
 	public FilesView getList() {
-		List<File> files = dao.findByAll();
+		List<File> files = dao.findLastTen();
 		return new FilesView(files);
 	}
 }
