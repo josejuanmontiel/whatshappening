@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HelloAndroidActivity extends Activity implements OnTaskCompleteListener {
@@ -93,7 +94,7 @@ public class HelloAndroidActivity extends Activity implements OnTaskCompleteList
 					.show();
 		} else {
 			// Get result
-			Boolean result = null;
+			String result = null;
 			try {
 				result = task.get();
 			} catch (Exception e) {
@@ -105,6 +106,7 @@ public class HelloAndroidActivity extends Activity implements OnTaskCompleteList
 					getString(R.string.task_completed,
 							(result != null) ? result.toString() : "null"),
 					Toast.LENGTH_LONG).show();
+
 		}
 	}
 

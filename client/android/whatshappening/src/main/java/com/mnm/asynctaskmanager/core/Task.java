@@ -17,13 +17,13 @@ import android.widget.Toast;
 
 import com.accreativos.R;
 
-public final class Task extends AsyncTask<Void, String, Boolean> {
+public final class Task extends AsyncTask<Void, String, String> {
 
 	protected final Resources mResources;
 	protected final InputStream is;
 	protected final String existingFileName;
 
-	private Boolean mResult;
+	private String mResult;
 	private String mProgressMessage;
 	private IProgressTracker mProgressTracker;
 
@@ -70,7 +70,7 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 
 	/* UI Thread */
 	@Override
-	protected void onPostExecute(Boolean result) {
+	protected void onPostExecute(String result) {
 		// Update result
 		mResult = result;
 		// And send it to progress tracker
@@ -83,12 +83,12 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 
 	/* Separate Thread */
 	@Override
-	protected Boolean doInBackground(Void... arg0) {
+	protected String doInBackground(Void... arg0) {
 		// Working in separate thread
 
 		if (isCancelled()) {
 			// This return causes onPostExecute call on UI thread
-			return false;
+			return "Cancelado";
 		}
 
 		// This call causes onProgressUpdate call on UI thread
@@ -96,13 +96,11 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 	
 		byte[] data = getBytesFromFile(is);
 	    
-		doFileUpload(existingFileName,data);
-
 		// This return causes onPostExecute call on UI thread
-		return true;
+		return doFileUpload(existingFileName,data);
 	}
 
-	private void doFileUpload(String existingFileName, byte[] buffer) {
+	private String doFileUpload(String existingFileName, byte[] buffer) {
 
 		HttpURLConnection conn = null;
 		DataOutputStream dos = null;
@@ -110,7 +108,7 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 		String lineEnd = "\r\n";
 		String twoHyphens = "--";
 		String boundary = "*****";
-		String urlString = "http://whatshappening.no-ip.org/image/attached";
+		String urlString = "http://192.168.1.151:8080/image/attached";
 
 		try {
 			// ------------------ CLIENT REQUEST
@@ -151,22 +149,18 @@ public final class Task extends AsyncTask<Void, String, Boolean> {
 		}
 
 		// ------------------ read the SERVER RESPONSE
+		String str = null;
 		try {
-
 			inStream = new DataInputStream(conn.getInputStream());
-			String str;
-
 			while ((str = inStream.readLine()) != null) {
-
 				Log.e("Debug", "Server Response " + str);
-
 			}
-
 			inStream.close();
 
 		} catch (IOException ioex) {
 			Log.e("Debug", "error: " + ioex.getMessage(), ioex);
 		}
+		return str;
 	}
 
 	public static byte[] getBytesFromFile(InputStream is) {
