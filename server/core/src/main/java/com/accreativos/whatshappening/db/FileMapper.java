@@ -17,6 +17,7 @@ public class FileMapper implements ResultSetMapper<File> {
 				r.getString("pathToFile"),
 				r.getString("ip"), 
 				new DateTime(r.getTime("time").getTime()),
+				r.getBytes("surfinterestpoint"),
 				r.getInt("repeated"));
 	}
 }
