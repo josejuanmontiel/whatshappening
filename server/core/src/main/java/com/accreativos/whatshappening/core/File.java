@@ -1,9 +1,13 @@
 package com.accreativos.whatshappening.core;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 import org.joda.time.DateTime;
 
 public class File {
 
+	private BigDecimal id;
 	private String fileName;
 	private String pathToFile;
 	private String ip;
@@ -11,6 +15,14 @@ public class File {
 	private byte[] surfinterestpoint;
 	private int repeated;
 
+	public BigDecimal getId() {
+		return id;
+	}
+	
+	public void setId(BigDecimal id) {
+		this.id = id;
+	}
+	
 	public String getFileName() {
 		return fileName;
 	}
@@ -62,8 +74,9 @@ public class File {
 	public File() {
 	}
 
-	public File(String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated) {
+	public File(BigDecimal bigDecimal, String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated) {
 		super();
+		this.id = bigDecimal;
 		this.fileName = fileName;
 		this.pathToFile = pathToFile;
 		this.ip = ip;

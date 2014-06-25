@@ -13,6 +13,7 @@ public class FileMapper implements ResultSetMapper<File> {
 	public File map(int index, ResultSet r, StatementContext ctx)
 			throws SQLException {
 		return new File(
+				r.getBigDecimal("id"),
 				r.getString("fileName"), 
 				r.getString("pathToFile"),
 				r.getString("ip"), 

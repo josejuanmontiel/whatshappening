@@ -13,7 +13,7 @@ import com.accreativos.whatshappening.core.File;
 @RegisterMapper(FileMapper.class)
 public interface FileDAO {
 
-	@SqlUpdate("CREATE TABLE file (fileName character varying, pathToFile character varying, ip character varying, time timestamp with time zone, surfinterestpoint bytea, repeated numeric)")
+	@SqlUpdate("CREATE TABLE file (id SERIAL, fileName character varying, pathToFile character varying, ip character varying, time timestamp with time zone, surfinterestpoint bytea, repeated numeric)")
 	void createFileTable();
 
 	@SqlUpdate("INSERT INTO file(fileName, pathToFile, ip, time, surfinterestpoint, repeated) VALUES (:fileName, :pathToFile, :ip, :time, :surfinterestpoint, :repeated)")
