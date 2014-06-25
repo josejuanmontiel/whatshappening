@@ -11,7 +11,7 @@ import com.accreativos.whatshappening.core.File;
 import com.accreativos.whatshappening.db.FileDAO;
 import com.accreativos.whatshappening.view.FilesView;
 
-@Path("/list")
+@Path("/view")
 @Produces(MediaType.TEXT_HTML)
 public class FilesResourceView {
 	
@@ -22,6 +22,7 @@ public class FilesResourceView {
 	}
 
 	@GET
+	@Path("/list")
 	public FilesView getList() {
 		List<File> files = dao.findLastTen();
 		return new FilesView(files);
