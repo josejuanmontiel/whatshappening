@@ -36,9 +36,11 @@ import com.accreativos.whatshappening.db.FileDAO;
 import com.stromberglabs.jopensurf.SURFInterestPoint;
 import com.stromberglabs.jopensurf.Surf;
 import com.sun.jersey.core.header.FormDataContentDisposition;
+import com.sun.jersey.multipart.BodyPart;
+import com.sun.jersey.multipart.FormDataBodyPart;
 import com.sun.jersey.multipart.FormDataParam;
 
-@Path("/image")
+@Path("/api/v1")
 @Produces(MediaType.APPLICATION_JSON)
 public class WhatsHappeningFileResource {
 
@@ -51,15 +53,17 @@ public class WhatsHappeningFileResource {
 	}
 
 	@POST
-	@Path("/attached")
+	@Path("/image/upload")
 	@Produces(TEXT_PLAIN)
 	@Consumes(MULTIPART_FORM_DATA)
 	public String uploadFile(@FormDataParam("image") final InputStream stream,
-			@FormDataParam("image") FormDataContentDisposition fileDetail,
+			@FormDataParam("image") FormDataContentDisposition fileDetail, @FormDataParam("image") FormDataBodyPart body,
 			@Context HttpServletRequest request)
 			throws Exception {
 
-		String tempname = UUID.randomUUID().toString();
+		String mime = body.getMediaType().getSubtype();
+
+		String tempname = UUID.randomUUID().toString()+"."+mime;
 		final String outputPath = UPLOAD_DIR + File.separator + tempname;
 		
 		String ip = request.getRemoteAddr();
