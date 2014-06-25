@@ -50,8 +50,9 @@
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="com.accreativos.whatshappening.resources.WhatsHappeningFileResource" 
-    project="core" file="/core/src/main/java/com/accreativos/whatshappening/resources/WhatsHappeningFileResource.java" 
+  <class id="6" language="java" name="com.accreativos.whatshappening.resources.api.WhatsHappeningFileResource" 
+    project="core" 
+    file="/core/src/main/java/com/accreativos/whatshappening/resources/api/WhatsHappeningFileResource.java" 
     binary="false" corner="BOTTOM_RIGHT">    
     <position height="131" width="316" x="41" y="334"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 

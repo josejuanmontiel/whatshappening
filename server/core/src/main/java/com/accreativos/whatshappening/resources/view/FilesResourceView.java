@@ -1,4 +1,4 @@
-package com.accreativos.whatshappening.resources;
+package com.accreativos.whatshappening.resources.view;
 
 import java.util.List;
 

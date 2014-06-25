@@ -10,8 +10,8 @@ import org.skife.jdbi.v2.DBI;
 
 import com.accreativos.whatshappening.db.FileDAO;
 import com.accreativos.whatshappening.health.TemplateHealthCheck;
-import com.accreativos.whatshappening.resources.FilesResourceView;
-import com.accreativos.whatshappening.resources.WhatsHappeningFileResource;
+import com.accreativos.whatshappening.resources.api.WhatsHappeningFileResource;
+import com.accreativos.whatshappening.resources.view.FilesResourceView;
 import com.bazaarvoice.dropwizard.assets.ConfiguredAssetsBundle;
 
 public class WhatsHappeningApplication extends Application<WhatsHappeningConfiguration> {

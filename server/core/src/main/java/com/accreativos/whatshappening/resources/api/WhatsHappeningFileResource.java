@@ -1,4 +1,4 @@
-package com.accreativos.whatshappening.resources;
+package com.accreativos.whatshappening.resources.api;
 
 import static javax.ws.rs.core.MediaType.MULTIPART_FORM_DATA;
 import static javax.ws.rs.core.MediaType.TEXT_PLAIN;
