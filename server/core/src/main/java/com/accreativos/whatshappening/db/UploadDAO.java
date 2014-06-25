@@ -9,9 +9,10 @@ import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 
 import com.accreativos.whatshappening.core.Upload;
+import com.accreativos.whatshappening.core.api.UploadJson;
 
-@RegisterMapper(FileMapper.class)
-public interface FileDAO {
+@RegisterMapper(UploadMapper.class)
+public interface UploadDAO {
 
 	@SqlUpdate("CREATE TABLE file (id SERIAL, fileName character varying, pathToFile character varying, ip character varying, time timestamp with time zone, surfinterestpoint bytea, repeated numeric)")
 	void createFileTable();

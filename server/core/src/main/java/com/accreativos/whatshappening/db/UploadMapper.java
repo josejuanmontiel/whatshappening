@@ -9,7 +9,7 @@ import org.skife.jdbi.v2.tweak.ResultSetMapper;
 
 import com.accreativos.whatshappening.core.Upload;
 
-public class FileMapper implements ResultSetMapper<Upload> {
+public class UploadMapper implements ResultSetMapper<Upload> {
 	public Upload map(int index, ResultSet r, StatementContext ctx)
 			throws SQLException {
 		return new Upload(

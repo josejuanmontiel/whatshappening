@@ -6,10 +6,10 @@ import java.util.List;
 
 import com.accreativos.whatshappening.core.Upload;
 
-public class FilesView extends View {
+public class UploadView extends View {
     private final List<Upload> files;
 
-    public FilesView(List<Upload> files) {
+    public UploadView(List<Upload> files) {
         super("files.ftl");
         this.files = files;
     }

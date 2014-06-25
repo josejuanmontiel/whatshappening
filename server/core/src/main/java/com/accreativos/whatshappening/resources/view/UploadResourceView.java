@@ -8,23 +8,23 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import com.accreativos.whatshappening.core.Upload;
-import com.accreativos.whatshappening.db.FileDAO;
-import com.accreativos.whatshappening.view.FilesView;
+import com.accreativos.whatshappening.db.UploadDAO;
+import com.accreativos.whatshappening.view.UploadView;
 
 @Path("/view")
 @Produces(MediaType.TEXT_HTML)
-public class FilesResourceView {
+public class UploadResourceView {
 	
-	private final FileDAO dao;
+	private final UploadDAO dao;
 
-	public FilesResourceView(FileDAO dao) {
+	public UploadResourceView(UploadDAO dao) {
 		this.dao = dao;
 	}
 
 	@GET
 	@Path("/list")
-	public FilesView getList() {
+	public UploadView getList() {
 		List<Upload> files = dao.findLastTen();
-		return new FilesView(files);
+		return new UploadView(files);
 	}
 }

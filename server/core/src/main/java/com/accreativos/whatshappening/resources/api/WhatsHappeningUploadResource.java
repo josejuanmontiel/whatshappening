@@ -34,7 +34,7 @@ import javax.ws.rs.core.MediaType;
 import org.joda.time.DateTime;
 
 import com.accreativos.whatshappening.core.Upload;
-import com.accreativos.whatshappening.db.FileDAO;
+import com.accreativos.whatshappening.db.UploadDAO;
 import com.stromberglabs.jopensurf.SURFInterestPoint;
 import com.stromberglabs.jopensurf.Surf;
 import com.sun.jersey.core.header.FormDataContentDisposition;
@@ -43,13 +43,13 @@ import com.sun.jersey.multipart.FormDataParam;
 
 @Path("/api/v1")
 @Produces(MediaType.APPLICATION_JSON)
-public class WhatsHappeningFileResource {
+public class WhatsHappeningUploadResource {
 
 	public static final String UPLOAD_DIR = "/home/whatshappening/uploads";
 
-	private final FileDAO dao;
+	private final UploadDAO dao;
 	
-	public WhatsHappeningFileResource(FileDAO dao) {
+	public WhatsHappeningUploadResource(UploadDAO dao) {
 		this.dao = dao;
 	}
 

@@ -8,10 +8,10 @@ import io.dropwizard.views.ViewBundle;
 
 import org.skife.jdbi.v2.DBI;
 
-import com.accreativos.whatshappening.db.FileDAO;
+import com.accreativos.whatshappening.db.UploadDAO;
 import com.accreativos.whatshappening.health.TemplateHealthCheck;
-import com.accreativos.whatshappening.resources.api.WhatsHappeningFileResource;
-import com.accreativos.whatshappening.resources.view.FilesResourceView;
+import com.accreativos.whatshappening.resources.api.WhatsHappeningUploadResource;
+import com.accreativos.whatshappening.resources.view.UploadResourceView;
 import com.bazaarvoice.dropwizard.assets.ConfiguredAssetsBundle;
 
 public class WhatsHappeningApplication extends Application<WhatsHappeningConfiguration> {
@@ -34,18 +34,18 @@ public class WhatsHappeningApplication extends Application<WhatsHappeningConfigu
     @Override
     public void run(WhatsHappeningConfiguration configuration, Environment environment) {
 	    final DBIFactory factory = new DBIFactory();
-	    FileDAO dao = null;
+	    UploadDAO dao = null;
 		try {
 			DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "postgresql");
-		    dao = jdbi.onDemand(FileDAO.class);
+		    dao = jdbi.onDemand(UploadDAO.class);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	    
-	    final WhatsHappeningFileResource resourceFile = new WhatsHappeningFileResource(dao);
+	    final WhatsHappeningUploadResource resourceFile = new WhatsHappeningUploadResource(dao);
 	    environment.jersey().register(resourceFile);
 
-		final FilesResourceView resourceView = new FilesResourceView(dao);
+		final UploadResourceView resourceView = new UploadResourceView(dao);
 	    environment.jersey().register(resourceView);
 
 	    final TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
