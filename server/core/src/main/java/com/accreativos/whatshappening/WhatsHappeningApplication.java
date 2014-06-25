@@ -8,7 +8,9 @@ import io.dropwizard.views.ViewBundle;
 
 import org.skife.jdbi.v2.DBI;
 
+import com.accreativos.whatshappening.core.api.UploadJson;
 import com.accreativos.whatshappening.db.UploadDAO;
+import com.accreativos.whatshappening.db.UploadJsonDAO;
 import com.accreativos.whatshappening.health.TemplateHealthCheck;
 import com.accreativos.whatshappening.resources.api.WhatsHappeningUploadResource;
 import com.accreativos.whatshappening.resources.view.UploadResourceView;
@@ -35,14 +37,16 @@ public class WhatsHappeningApplication extends Application<WhatsHappeningConfigu
     public void run(WhatsHappeningConfiguration configuration, Environment environment) {
 	    final DBIFactory factory = new DBIFactory();
 	    UploadDAO dao = null;
+	    UploadJsonDAO jsondao = null;
 		try {
 			DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "postgresql");
 		    dao = jdbi.onDemand(UploadDAO.class);
+		    jsondao = jdbi.onDemand(UploadJsonDAO.class);
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 	    
-	    final WhatsHappeningUploadResource resourceFile = new WhatsHappeningUploadResource(dao);
+	    final WhatsHappeningUploadResource resourceFile = new WhatsHappeningUploadResource(dao, jsondao);
 	    environment.jersey().register(resourceFile);
 
 		final UploadResourceView resourceView = new UploadResourceView(dao);
