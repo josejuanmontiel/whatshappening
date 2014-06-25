@@ -24,6 +24,7 @@ import java.util.UUID;
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -32,11 +33,11 @@ import javax.ws.rs.core.MediaType;
 
 import org.joda.time.DateTime;
 
+import com.accreativos.whatshappening.core.Upload;
 import com.accreativos.whatshappening.db.FileDAO;
 import com.stromberglabs.jopensurf.SURFInterestPoint;
 import com.stromberglabs.jopensurf.Surf;
 import com.sun.jersey.core.header.FormDataContentDisposition;
-import com.sun.jersey.multipart.BodyPart;
 import com.sun.jersey.multipart.FormDataBodyPart;
 import com.sun.jersey.multipart.FormDataParam;
 
@@ -52,6 +53,13 @@ public class WhatsHappeningFileResource {
 		this.dao = dao;
 	}
 
+	@GET
+	@Path("/list")
+	public List<Upload> getList() {
+		List<Upload> files = dao.findLastTen();
+		return files;
+	}
+	
 	@POST
 	@Path("/image/upload")
 	@Produces(TEXT_PLAIN)
@@ -75,9 +83,9 @@ public class WhatsHappeningFileResource {
 
 		List<SURFInterestPoint> pointsA = surf.getFreeOrientedInterestPoints();
 		
-		List<com.accreativos.whatshappening.core.File> lastHundred = dao.findLastHundred();
+		List<com.accreativos.whatshappening.core.Upload> lastHundred = dao.findLastHundred();
 		for (Iterator iterator = lastHundred.iterator(); iterator.hasNext();) {
-			com.accreativos.whatshappening.core.File file = (com.accreativos.whatshappening.core.File) iterator.next();
+			com.accreativos.whatshappening.core.Upload file = (com.accreativos.whatshappening.core.Upload) iterator.next();
 
 			List<SURFInterestPoint> pointsB = byteToSURFInterestPoint(file.getSurfinterestpoint());
 			if (isEquivalentTo(pointsA, pointsB)) {

@@ -8,7 +8,7 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.SqlUpdate;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 
-import com.accreativos.whatshappening.core.File;
+import com.accreativos.whatshappening.core.Upload;
 
 @RegisterMapper(FileMapper.class)
 public interface FileDAO {
@@ -20,13 +20,13 @@ public interface FileDAO {
 	void insert(@Bind("fileName") String fileName, @Bind("pathToFile") String pathToFile, @Bind("ip") String ip, @Bind("time") DateTime time, @Bind("surfinterestpoint") byte[] surfinterestpoint, @Bind("repeated") int repeated);
 
 	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated from file")
-	List<File> findAll();
+	List<Upload> findAll();
 	
 	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated from file order by time desc OFFSET 0 LIMIT 10")
-	List<File> findLastTen();
+	List<Upload> findLastTen();
 
 	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated from file order by time desc OFFSET 0 LIMIT 100")
-	List<File> findLastHundred();
+	List<Upload> findLastHundred();
 
 	@SqlUpdate("update file set repeated=(repeated+1) where pathToFile=:pathToFile")
 	void increment(@Bind("pathToFile") String pathToFile);	

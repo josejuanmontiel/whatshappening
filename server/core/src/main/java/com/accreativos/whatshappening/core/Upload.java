@@ -1,11 +1,10 @@
 package com.accreativos.whatshappening.core;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
 import org.joda.time.DateTime;
 
-public class File {
+public class Upload {
 
 	private BigDecimal id;
 	private String fileName;
@@ -71,10 +70,10 @@ public class File {
 		this.repeated = repeated;
 	}
 
-	public File() {
+	public Upload() {
 	}
 
-	public File(BigDecimal bigDecimal, String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated) {
+	public Upload(BigDecimal bigDecimal, String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated) {
 		super();
 		this.id = bigDecimal;
 		this.fileName = fileName;

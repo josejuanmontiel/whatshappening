@@ -4,17 +4,17 @@ import io.dropwizard.views.View;
 
 import java.util.List;
 
-import com.accreativos.whatshappening.core.File;
+import com.accreativos.whatshappening.core.Upload;
 
 public class FilesView extends View {
-    private final List<File> files;
+    private final List<Upload> files;
 
-    public FilesView(List<File> files) {
+    public FilesView(List<Upload> files) {
         super("files.ftl");
         this.files = files;
     }
 
-    public List<File> getFiles() {
+    public List<Upload> getFiles() {
 		return files;
 	}
 

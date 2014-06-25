@@ -7,12 +7,12 @@ import org.joda.time.DateTime;
 import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 
-import com.accreativos.whatshappening.core.File;
+import com.accreativos.whatshappening.core.Upload;
 
-public class FileMapper implements ResultSetMapper<File> {
-	public File map(int index, ResultSet r, StatementContext ctx)
+public class FileMapper implements ResultSetMapper<Upload> {
+	public Upload map(int index, ResultSet r, StatementContext ctx)
 			throws SQLException {
-		return new File(
+		return new Upload(
 				r.getBigDecimal("id"),
 				r.getString("fileName"), 
 				r.getString("pathToFile"),
