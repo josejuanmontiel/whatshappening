@@ -13,9 +13,9 @@ server:
 # hardNofileLimit: 1000
   applicationConnectors:
     - type: http
-      port: 8080
+      port: 9090
     - type: https
-      port: 8443
+      port: 9443
       keyStorePath: example.keystore
       keyStorePassword: example
       validateCerts: false
@@ -27,9 +27,9 @@ server:
 # validateCerts: false
   adminConnectors:
     - type: http
-      port: 8081
+      port: 9081
     - type: https
-      port: 8444
+      port: 9444
       keyStorePath: example.keystore
       keyStorePassword: example
       validateCerts: false
@@ -82,4 +82,10 @@ database:
 
   # whether or not idle connections should be validated
   checkConnectionWhileIdle: false
-    
+  
+assets:
+  overrides:
+    /images: /home/whatshappening/uploads
+  mimeTypes:
+    jpg: image/jpg
+    png: image/png    
