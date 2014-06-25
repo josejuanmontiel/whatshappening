@@ -12,7 +12,7 @@ import com.accreativos.whatshappening.db.FileDAO;
 import com.accreativos.whatshappening.health.TemplateHealthCheck;
 import com.accreativos.whatshappening.resources.FilesResourceView;
 import com.accreativos.whatshappening.resources.WhatsHappeningFileResource;
-import com.accreativos.whatshappening.resources.WhatsHappeningResource;
+import com.bazaarvoice.dropwizard.assets.ConfiguredAssetsBundle;
 
 public class WhatsHappeningApplication extends Application<WhatsHappeningConfiguration> {
 
@@ -27,7 +27,8 @@ public class WhatsHappeningApplication extends Application<WhatsHappeningConfigu
 
     @Override
     public void initialize(Bootstrap<WhatsHappeningConfiguration> bootstrap) {
-    	 bootstrap.addBundle(new ViewBundle());
+    	bootstrap.addBundle(new ConfiguredAssetsBundle("/assets/", "/images/"));
+    	bootstrap.addBundle(new ViewBundle());
     }
 
     @Override
