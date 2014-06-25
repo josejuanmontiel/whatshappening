@@ -11,7 +11,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Path("/hello-world")
+@Path("/api/v1")
 @Produces(MediaType.APPLICATION_JSON)
 public class WhatsHappeningResource {
 
@@ -27,6 +27,7 @@ public class WhatsHappeningResource {
 
     @GET
     @Timed
+    @Path("/saying")
     public Saying sayHello(@QueryParam("name") Optional<String> name) {
         final String value = String.format(template, name.or(defaultName));
         return new Saying(counter.incrementAndGet(), value);
