@@ -8,42 +8,54 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.bazaarvoice.dropwizard.assets.AssetsBundleConfiguration;
+import com.bazaarvoice.dropwizard.assets.AssetsConfiguration;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class WhatsHappeningConfiguration extends Configuration {
-    @NotEmpty
-    private String template;
+public class WhatsHappeningConfiguration extends Configuration implements AssetsBundleConfiguration {
+	@NotEmpty
+	private String template;
 
-    @NotEmpty
-    private String defaultName = "Stranger";
+	@NotEmpty
+	private String defaultName = "Stranger";
 
-    @Valid
-    @NotNull
-    @JsonProperty
-    private DataSourceFactory database = new DataSourceFactory();
+	@Valid
+	@NotNull
+	@JsonProperty
+	private DataSourceFactory database = new DataSourceFactory();
 
-    public DataSourceFactory getDataSourceFactory() {
-        return database;
-    }
-    
-    @JsonProperty
-    public String getTemplate() {
-        return template;
-    }
+	@Valid
+	@NotNull
+	@JsonProperty
+	private final AssetsConfiguration assets = new AssetsConfiguration();
 
-    @JsonProperty
-    public void setTemplate(String template) {
-        this.template = template;
-    }
+	@Override
+	public AssetsConfiguration getAssetsConfiguration() {
+		return assets;
+	}
 
-    @JsonProperty
-    public String getDefaultName() {
-        return defaultName;
-    }
+	public DataSourceFactory getDataSourceFactory() {
+		return database;
+	}
 
-    @JsonProperty
-    public void setDefaultName(String defaultName) {
-        this.defaultName = defaultName;
-    }
+	@JsonProperty
+	public String getTemplate() {
+		return template;
+	}
+
+	@JsonProperty
+	public void setTemplate(String template) {
+		this.template = template;
+	}
+
+	@JsonProperty
+	public String getDefaultName() {
+		return defaultName;
+	}
+
+	@JsonProperty
+	public void setDefaultName(String defaultName) {
+		this.defaultName = defaultName;
+	}
 
 }
