@@ -114,7 +114,7 @@ public class WhatsHappeningUploadResource {
 		byte [] bytes = SURFInterestPointToByte(pointsA);
 		dao.insert(fileName, tempname, ip, DateTime.now(), bytes, 1);
 
-		return tempname;
+		return "No se han encontrado concordancias en las ultimas 100 imagenes enviadas...";
 	}
 	
 	private boolean isEquivalentTo(List<SURFInterestPoint> pointsA, List<SURFInterestPoint> pointsB){
