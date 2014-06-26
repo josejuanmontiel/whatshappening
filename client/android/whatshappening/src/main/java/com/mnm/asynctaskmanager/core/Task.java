@@ -108,7 +108,7 @@ public final class Task extends AsyncTask<Void, String, String> {
 		String lineEnd = "\r\n";
 		String twoHyphens = "--";
 		String boundary = "*****";
-		String urlString = "http://192.168.1.152:9090/api/v1/image/upload";
+		String urlString = "http://whatshappening.no-ip.org/api/v1/image/upload";
 
 		try {
 			// ------------------ CLIENT REQUEST
