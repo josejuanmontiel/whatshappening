@@ -35,13 +35,13 @@ public interface UploadDAO {
 	@SqlUpdate("INSERT INTO file(fileName, pathToFile, ip, time, surfinterestpoint, repeated, verified) VALUES (:fileName, :pathToFile, :ip, :time, :surfinterestpoint, :repeated, false)")
 	void insert(@Bind("fileName") String fileName, @Bind("pathToFile") String pathToFile, @Bind("ip") String ip, @Bind("time") DateTime time, @Bind("surfinterestpoint") byte[] surfinterestpoint, @Bind("repeated") int repeated);
 
-	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated from file")
+	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated, verified from file")
 	List<Upload> findAll();
 	
-	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated from file order by time desc OFFSET 0 LIMIT 10")
+	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated, verified from file order by time desc OFFSET 0 LIMIT 10")
 	List<Upload> findLastTen();
 
-	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated from file order by time desc OFFSET 0 LIMIT 100")
+	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated, verified from file order by time desc OFFSET 0 LIMIT 100")
 	List<Upload> findLastHundred();
 
 	@SqlUpdate("update file set repeated=(repeated+1) where pathToFile=:pathToFile")
