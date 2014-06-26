@@ -1,19 +1,19 @@
 package com.mnm.asynctaskmanager.core;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.accreativos.R;
 
@@ -108,7 +108,7 @@ public final class Task extends AsyncTask<Void, String, String> {
 		String lineEnd = "\r\n";
 		String twoHyphens = "--";
 		String boundary = "*****";
-		String urlString = "http://whatshappening.no-ip.org/api/v1/image/upload";
+		String urlString = "http://192.168.1.152:9090/api/v1/image/upload";
 
 		try {
 			// ------------------ CLIENT REQUEST
@@ -149,18 +149,19 @@ public final class Task extends AsyncTask<Void, String, String> {
 		}
 
 		// ------------------ read the SERVER RESPONSE
-		String str = null;
+		StringBuilder sb = new StringBuilder();
 		try {
-			inStream = new DataInputStream(conn.getInputStream());
-			while ((str = inStream.readLine()) != null) {
-				Log.e("Debug", "Server Response " + str);
-			}
-			inStream.close();
+			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 
-		} catch (IOException ioex) {
-			Log.e("Debug", "error: " + ioex.getMessage(), ioex);
+	        String line;
+	        while ((line = br.readLine()) != null) {
+	            sb.append(line+"\n");
+	        }
+	        br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		return str;
+        return sb.toString();
 	}
 
 	public static byte[] getBytesFromFile(InputStream is) {

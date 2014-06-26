@@ -25,7 +25,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class HelloAndroidActivity extends Activity implements OnTaskCompleteListener {
+public class WhatsHappeningActivity extends Activity implements OnTaskCompleteListener {
 
 	private AsyncTaskManager mAsyncTaskManager;
 
@@ -73,6 +73,11 @@ public class HelloAndroidActivity extends Activity implements OnTaskCompleteList
 		
 	}
 
+	public void sendMessage(View view) {
+		Intent intent = new Intent(WhatsHappeningActivity.this, ListActivity.class);
+		startActivity(intent);
+	}
+	
 	private void writeMessage(String text) {
 		Context context = getApplicationContext();
 		int duration = Toast.LENGTH_LONG;
@@ -90,8 +95,7 @@ public class HelloAndroidActivity extends Activity implements OnTaskCompleteList
 	public void onTaskComplete(Task task) {
 		if (task.isCancelled()) {
 			// Report about cancel
-			Toast.makeText(this, R.string.task_cancelled, Toast.LENGTH_LONG)
-					.show();
+			Toast.makeText(this, R.string.task_cancelled, Toast.LENGTH_LONG).show();
 		} else {
 			// Get result
 			String result = null;
@@ -100,21 +104,27 @@ public class HelloAndroidActivity extends Activity implements OnTaskCompleteList
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			
+			// Mostramos el mensaje de vuelva del servidor...
+			setContentView(R.layout.activity_main);
+
+		    TextView t=new TextView(this); 
+
+		    t=(TextView)findViewById(R.id.main_activity); 
+		    t.setText(result);
+			
 			// Report about result
 			Toast.makeText(
-					this,
-					getString(R.string.task_completed,
-							(result != null) ? result.toString() : "null"),
-					Toast.LENGTH_LONG).show();
+					this,result, Toast.LENGTH_LONG).show();
 
 		}
 	}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-	// Inflate the menu; this adds items to the action bar if it is present.
-	getMenuInflater().inflate(com.accreativos.R.menu.main, menu);
-	return true;
+    	// Inflate the menu; this adds items to the action bar if it is present.
+    	getMenuInflater().inflate(com.accreativos.R.menu.main, menu);
+    	return true;
     }
 
 }

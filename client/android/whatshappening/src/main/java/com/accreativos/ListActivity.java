@@ -36,7 +36,7 @@ public class ListActivity extends Activity {
         setContentView(R.layout.activity_main);
  
         // URL to the JSON data
-        String strUrl = "http://10.0.6.52:9090/api/v1/list";
+        String strUrl = "http://192.168.1.152:9090/api/v1/list";
  
         // Creating a new non-ui thread task to download json data
         DownloadTask downloadTask = new DownloadTask();
