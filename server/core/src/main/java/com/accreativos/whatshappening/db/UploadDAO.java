@@ -32,7 +32,7 @@ public interface UploadDAO {
 				"verified boolean)")
 	void createFileTable();
 
-	@SqlUpdate("INSERT INTO file(fileName, pathToFile, ip, time, surfinterestpoint, repeated, idsCompared, verified) VALUES (:fileName, :pathToFile, :ip, :time, :surfinterestpoint, :repeated, false)")
+	@SqlUpdate("INSERT INTO file(fileName, pathToFile, ip, time, surfinterestpoint, repeated, verified) VALUES (:fileName, :pathToFile, :ip, :time, :surfinterestpoint, :repeated, false)")
 	void insert(@Bind("fileName") String fileName, @Bind("pathToFile") String pathToFile, @Bind("ip") String ip, @Bind("time") DateTime time, @Bind("surfinterestpoint") byte[] surfinterestpoint, @Bind("repeated") int repeated);
 
 	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated from file")
