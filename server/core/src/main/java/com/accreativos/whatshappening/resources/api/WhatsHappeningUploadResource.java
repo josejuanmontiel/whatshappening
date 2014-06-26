@@ -12,10 +12,13 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.WritableByteChannel;
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -87,6 +90,8 @@ public class WhatsHappeningUploadResource {
 
 		List<SURFInterestPoint> pointsA = surf.getFreeOrientedInterestPoints();
 		
+		List<BigDecimal> idsCompared = new ArrayList<BigDecimal>();
+		
 		List<com.accreativos.whatshappening.core.Upload> lastHundred = dao.findLastHundred();
 		for (Iterator iterator = lastHundred.iterator(); iterator.hasNext();) {
 			com.accreativos.whatshappening.core.Upload file = (com.accreativos.whatshappening.core.Upload) iterator.next();
@@ -94,10 +99,17 @@ public class WhatsHappeningUploadResource {
 			List<SURFInterestPoint> pointsB = byteToSURFInterestPoint(file.getSurfinterestpoint());
 			if (isEquivalentTo(pointsA, pointsB)) {
 				dao.increment(file.getPathToFile());
-				return "Repeated "+(file.getRepeated()+1) +"times";
+				return "La imagen enviada... ha sido enviada "+(file.getRepeated()+1) +" veces";
+			} else {
+				// Sino coincide... vamos anotando los ids...
+				idsCompared.add(file.getId());
 			}
 		}
 
+		// Si hemos recorrido toda la lista... es que no estaba en los N(100) ultimos.. marcamos los ids...
+		if (lastHundred.size()==idsCompared.size()) {
+		}
+		
 		// No son iguales...
 		byte [] bytes = SURFInterestPointToByte(pointsA);
 		dao.insert(fileName, tempname, ip, DateTime.now(), bytes, 1);
