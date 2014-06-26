@@ -1,5 +1,5 @@
 package com.accreativos;
- 
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -10,9 +10,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
-
+ 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import com.accreativos.api.UploadJSONParser;
+ 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -22,8 +25,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-
-import com.accreativos.api.CountryJSONParser;
  
 public class ListActivity extends Activity {
  
@@ -35,7 +36,7 @@ public class ListActivity extends Activity {
         setContentView(R.layout.activity_main);
  
         // URL to the JSON data
-        String strUrl = "http://wptrafficanalyzer.in/p/demo1/first.php/countries";
+        String strUrl = "http://10.0.6.52:9090/api/v1/list";
  
         // Creating a new non-ui thread task to download json data
         DownloadTask downloadTask = new DownloadTask();
@@ -113,33 +114,31 @@ public class ListActivity extends Activity {
     /** AsyncTask to parse json data and load ListView */
     private class ListViewLoaderTask extends AsyncTask<String, Void, SimpleAdapter>{
  
-        JSONObject jObject;
+        JSONArray jList;
         // Doing the parsing of xml data in a non-ui thread
         @Override
         protected SimpleAdapter doInBackground(String... strJson) {
             try{
-                jObject = new JSONObject(strJson[0]);
-                CountryJSONParser countryJsonParser = new CountryJSONParser();
-                countryJsonParser.parse(jObject);
+            	jList = new JSONArray(strJson[0]);
             }catch(Exception e){
                 Log.d("JSON Exception1",e.toString());
             }
  
             // Instantiating json parser class
-            CountryJSONParser countryJsonParser = new CountryJSONParser();
+            UploadJSONParser countryJsonParser = new UploadJSONParser();
  
             // A list object to store the parsed countries list
             List<HashMap<String, Object>> countries = null;
  
             try{
                 // Getting the parsed data as a List construct
-                countries = countryJsonParser.parse(jObject);
+                countries = countryJsonParser.parse(jList);
             }catch(Exception e){
                 Log.d("Exception",e.toString());
             }
  
             // Keys used in Hashmap
-            String[] from = { "country","flag","details"};
+            String[] from = { "fileName","upload","repeated"};
  
             // Ids of views in listview_layout
             int[] to = { R.id.tv_country,R.id.iv_flag,R.id.tv_country_details};
@@ -160,11 +159,11 @@ public class ListActivity extends Activity {
  
             for(int i=0;i<adapter.getCount();i++){
                 HashMap<String, Object> hm = (HashMap<String, Object>) adapter.getItem(i);
-                String imgUrl = (String) hm.get("flag_path");
+                String imgUrl = (String) hm.get("pathToFile");
                 ImageLoaderTask imageLoaderTask = new ImageLoaderTask();
  
                 HashMap<String, Object> hmDownload = new HashMap<String, Object>();
-                hm.put("flag_path",imgUrl);
+                hm.put("pathToFile",imgUrl);
                 hm.put("position", i);
  
                 // Starting ImageLoaderTask to download and populate image in the listview
@@ -180,12 +179,12 @@ public class ListActivity extends Activity {
         protected HashMap<String, Object> doInBackground(HashMap<String, Object>... hm) {
  
             InputStream iStream=null;
-            String imgUrl = (String) hm[0].get("flag_path");
+            String imgUrl = (String) hm[0].get("pathToFile");
             int position = (Integer) hm[0].get("position");
  
             URL url;
             try {
-                url = new URL(imgUrl);
+                url = new URL("http://10.0.6.52:9090/images/"+imgUrl);
  
                 // Creating an http connection to communicate with url
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -200,7 +199,7 @@ public class ListActivity extends Activity {
                 File cacheDirectory = getBaseContext().getCacheDir();
  
                 // Temporary file to store the downloaded image
-                File tmpFile = new File(cacheDirectory.getPath() + "/wpta_"+position+".png");
+                File tmpFile = new File(cacheDirectory.getPath() + "/wpta_"+imgUrl);
  
                 // The FileOutputStream to the temporary file
                 FileOutputStream fOutStream = new FileOutputStream(tmpFile);
@@ -221,7 +220,7 @@ public class ListActivity extends Activity {
                 HashMap<String, Object> hmBitmap = new HashMap<String, Object>();
  
                 // Storing the path to the temporary image file
-                hmBitmap.put("flag",tmpFile.getPath());
+                hmBitmap.put("upload",tmpFile.getPath());
  
                 // Storing the position of the image in the listview
                 hmBitmap.put("position",position);
@@ -238,7 +237,7 @@ public class ListActivity extends Activity {
         @Override
         protected void onPostExecute(HashMap<String, Object> result) {
             // Getting the path to the downloaded image
-            String path = (String) result.get("flag");
+            String path = (String) result.get("upload");
  
             // Getting the position of the downloaded image
             int position = (Integer) result.get("position");
@@ -250,7 +249,7 @@ public class ListActivity extends Activity {
             HashMap<String, Object> hm = (HashMap<String, Object>) adapter.getItem(position);
  
             // Overwriting the existing path in the adapter
-            hm.put("flag",path);
+            hm.put("upload",path);
  
             // Noticing listview about the dataset changes
             adapter.notifyDataSetChanged();
