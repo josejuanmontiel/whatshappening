@@ -19,6 +19,8 @@ public class UploadMapper implements ResultSetMapper<Upload> {
 				r.getString("ip"), 
 				new DateTime(r.getTime("time").getTime()),
 				r.getBytes("surfinterestpoint"),
-				r.getInt("repeated"));
+				r.getInt("repeated"),
+				r.getArray("idsCompared"),
+				r.getBoolean("verified"));
 	}
 }

@@ -1,5 +1,8 @@
 package com.accreativos.whatshappening.db;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.sql.Array;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -14,10 +17,22 @@ import com.accreativos.whatshappening.core.api.UploadJson;
 @RegisterMapper(UploadMapper.class)
 public interface UploadDAO {
 
-	@SqlUpdate("CREATE TABLE file (id SERIAL, fileName character varying, pathToFile character varying, ip character varying, time timestamp with time zone, surfinterestpoint bytea, repeated numeric)")
+	
+	// CREATE TABLE file (id SERIAL, fileName character varying, pathToFile character varying, ip character varying, time timestamp with time zone, surfinterestpoint bytea, repeated numeric, idsCompared bigint[], verified boolean)
+	
+	@SqlUpdate("CREATE TABLE file " +
+				"(id SERIAL, " +
+				"fileName character varying, " +
+				"pathToFile character varying, " +
+				"ip character varying, " +
+				"time timestamp with time zone, " +
+				"surfinterestpoint bytea, " +
+				"repeated numeric," +
+				"idsCompared bigint[]," +
+				"verified boolean)")
 	void createFileTable();
 
-	@SqlUpdate("INSERT INTO file(fileName, pathToFile, ip, time, surfinterestpoint, repeated) VALUES (:fileName, :pathToFile, :ip, :time, :surfinterestpoint, :repeated)")
+	@SqlUpdate("INSERT INTO file(fileName, pathToFile, ip, time, surfinterestpoint, repeated, idsCompared, verified) VALUES (:fileName, :pathToFile, :ip, :time, :surfinterestpoint, :repeated, false)")
 	void insert(@Bind("fileName") String fileName, @Bind("pathToFile") String pathToFile, @Bind("ip") String ip, @Bind("time") DateTime time, @Bind("surfinterestpoint") byte[] surfinterestpoint, @Bind("repeated") int repeated);
 
 	@SqlQuery("select id, fileName, pathToFile, ip, time, surfinterestpoint, repeated from file")
@@ -31,5 +46,7 @@ public interface UploadDAO {
 
 	@SqlUpdate("update file set repeated=(repeated+1) where pathToFile=:pathToFile")
 	void increment(@Bind("pathToFile") String pathToFile);	
-	
+
+	@SqlUpdate("update file set idsCompared=:idsCompared where id=:id")
+	void setListIdsCompared(@Bind("idsCompared") Array idsCompared, @Bind("id") BigInteger id);		
 }
