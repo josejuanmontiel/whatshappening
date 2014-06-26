@@ -9,4 +9,8 @@
     <string name="task_working">Working...</string>
     <string name="task_cancelled">Cancelled...</string>
     <string name="task_completed">Completed...</string>
+    
+    <string name="list_last_100_upload">Muestra los 100 ultimos</string>
+    <string name="str_iv_flag">Upload</string>
+    
 </resources>
