@@ -1,6 +1,7 @@
 package com.accreativos.whatshappening;
 
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.jdbi.DBIFactory;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -30,6 +31,7 @@ public class WhatsHappeningApplication extends Application<WhatsHappeningConfigu
     @Override
     public void initialize(Bootstrap<WhatsHappeningConfiguration> bootstrap) {
     	bootstrap.addBundle(new ConfiguredAssetsBundle("/assets/", "/images/"));
+    	bootstrap.addBundle(new AssetsBundle("/assets/", "/static/",null,"static"));
     	bootstrap.addBundle(new ViewBundle());
     }
 

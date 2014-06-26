@@ -86,6 +86,9 @@ database:
 assets:
   overrides:
     /images: /home/whatshappening/uploads
+    /static: src/main/resources/assets/
   mimeTypes:
     jpg: image/jpg
-    png: image/png    
+    png: image/png
+    html: text/html
+
