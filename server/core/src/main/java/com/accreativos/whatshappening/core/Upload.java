@@ -92,7 +92,7 @@ public class Upload {
 		this.verified = verified;
 	}
 
-	public Upload(BigDecimal bigDecimal, String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated, Array idsCompared, boolean verified) {
+	public Upload(BigDecimal bigDecimal, String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated, boolean verified) {
 		super();
 		this.id = bigDecimal;
 		this.fileName = fileName;
@@ -101,7 +101,6 @@ public class Upload {
 		this.time = time;
 		this.surfinterestpoint = surfinterestpoint;
 		this.repeated = repeated;
-		this.idsCompared = idsCompared;
 		this.verified = verified;
 	}
 

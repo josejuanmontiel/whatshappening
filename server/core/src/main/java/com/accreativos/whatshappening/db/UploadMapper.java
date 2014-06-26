@@ -20,7 +20,6 @@ public class UploadMapper implements ResultSetMapper<Upload> {
 				new DateTime(r.getTime("time").getTime()),
 				r.getBytes("surfinterestpoint"),
 				r.getInt("repeated"),
-				r.getArray("idsCompared"),
 				r.getBoolean("verified"));
 	}
 }
