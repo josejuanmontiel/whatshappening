@@ -1,6 +1,7 @@
 package com.accreativos.whatshappening.core;
 
 import java.math.BigDecimal;
+import java.sql.Array;
 
 import org.joda.time.DateTime;
 
@@ -13,6 +14,8 @@ public class Upload {
 	private DateTime time;
 	private byte[] surfinterestpoint;
 	private int repeated;
+	private Array idsCompared;
+	private boolean verified;
 
 	public BigDecimal getId() {
 		return id;
@@ -73,7 +76,23 @@ public class Upload {
 	public Upload() {
 	}
 
-	public Upload(BigDecimal bigDecimal, String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated) {
+	public Array getIdsCompared() {
+		return idsCompared;
+	}
+
+	public void setIdsCompared(Array idsCompared) {
+		this.idsCompared = idsCompared;
+	}
+
+	public boolean isVerified() {
+		return verified;
+	}
+
+	public void setVerified(boolean verified) {
+		this.verified = verified;
+	}
+
+	public Upload(BigDecimal bigDecimal, String fileName, String pathToFile, String ip, DateTime time, byte[] surfinterestpoint, int repeated, Array idsCompared, boolean verified) {
 		super();
 		this.id = bigDecimal;
 		this.fileName = fileName;
@@ -82,6 +101,8 @@ public class Upload {
 		this.time = time;
 		this.surfinterestpoint = surfinterestpoint;
 		this.repeated = repeated;
+		this.idsCompared = idsCompared;
+		this.verified = verified;
 	}
 
 }
