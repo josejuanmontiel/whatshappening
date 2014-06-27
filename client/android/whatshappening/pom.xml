@@ -4,14 +4,13 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.accreativos</groupId>
 	<artifactId>whatshappening</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>apk</packaging>
 	<name>whatshappening</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<platform.version> 4.0.1.2
-			</platform.version>
+		<platform.version>4.0.1.2</platform.version>
 		<android.plugin.version>3.8.0</android.plugin.version>
 	</properties>
 
@@ -39,13 +38,111 @@
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 				<artifactId>android-maven-plugin</artifactId>
+				<version>${android.plugin.version}</version>
 				<configuration>
 					<sdk>
 						<platform>15</platform>
 					</sdk>
 				</configuration>
 			</plugin>
-
 		</plugins>
 	</build>
+
+	<profiles>
+  		<profile>
+    		<id>release</id>
+     		<!-- via this activation the profile is automatically used when the release is done with the maven release plugin -->
+     		<activation>
+      			<property>
+        			<name>performRelease</name>
+        			<value>true</value>
+      			</property>
+    		</activation>
+
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jarsigner-plugin</artifactId>
+						<executions>
+						    <execution>
+						        <id>signing</id>
+						        <goals>
+						            <goal>sign</goal>
+						            <goal>verify</goal>
+						        </goals>
+						        <phase>package</phase>
+						        <inherited>true</inherited>
+						        <configuration>
+						            <removeExistingSignatures>true</removeExistingSignatures>
+						            <archiveDirectory/>
+						            <includes>
+						                <include>${project.build.directory}/${project.artifactId}.apk</include>
+						            </includes>
+						            <keystore>${sign.keystore}</keystore>
+						            <alias>${sign.alias}</alias>
+						            <storepass>${sign.storepass}</storepass>
+						            <keypass>${sign.keypass}</keypass>
+						            <verbose>true</verbose>
+						        </configuration>
+						    </execution>
+						</executions>
+					</plugin>
+
+					<!-- the signed apk then needs to be zipaligned -->
+					<plugin>
+						<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+						<artifactId>android-maven-plugin</artifactId>
+						<version>${android.plugin.version}</version>
+						<inherited>true</inherited>
+						<configuration>
+							<release>true</release>
+							<sign>
+								<debug>false</debug>
+							</sign>
+							<zipalign>
+								<verbose>true</verbose>
+								<inputApk>${project.build.directory}/${project.artifactId}.apk</inputApk>
+								<outputApk>${project.build.directory}/${project.artifactId}-signed-aligned.apk
+								</outputApk>
+							</zipalign>
+						</configuration>
+						<executions>
+							<execution>
+								<id>alignApk</id>
+								<phase>package</phase>
+								<goals>
+									<goal>zipalign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>${project.build.directory}/${project.artifactId}-signed-aligned.apk</file>
+									<type>apk</type>
+									<classifier>signed-aligned</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+						<executions>
+							<execution>
+								<id>attach-signed-aligned</id>
+								<phase>package</phase>
+								<goals>
+									<goal>attach-artifact</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>
