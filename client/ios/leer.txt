@@ -1,0 +1,2 @@
+- Boton de compartir en IOS
+	http://getsharekit.com/
