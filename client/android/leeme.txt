@@ -39,3 +39,7 @@
 
 *** Libreria upload
 	https://github.com/alexbbb/android-upload-service
+
+*** Libreria de listview
+	https://coderwall.com/p/dpfrcw
+	https://github.com/nhaarman/ListViewAnimations
