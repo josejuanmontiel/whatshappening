@@ -33,7 +33,7 @@ public class ListActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.list_activity);
  
         // URL to the JSON data
         String strUrl = "http://whatshappening.no-ip.org/api/v1/list";

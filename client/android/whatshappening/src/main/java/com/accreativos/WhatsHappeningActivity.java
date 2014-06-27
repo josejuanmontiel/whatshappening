@@ -35,8 +35,7 @@ public class WhatsHappeningActivity extends Activity implements OnTaskCompleteLi
 		Button next = (Button) findViewById(R.id.list_button);
 		next.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
-				Intent myIntent = new Intent(view.getContext(),
-						ListActivity.class);
+				Intent myIntent = new Intent(view.getContext(),ListActivity.class);
 				startActivityForResult(myIntent, 0);
 			}
 		});
