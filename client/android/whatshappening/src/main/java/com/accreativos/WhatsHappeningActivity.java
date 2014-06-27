@@ -35,6 +35,7 @@ public class WhatsHappeningActivity extends Activity implements OnTaskCompleteLi
 		Button next = (Button) findViewById(R.id.list_button);
 		next.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View view) {
+				setContentView(R.layout.activity_main);
 				Intent myIntent = new Intent(view.getContext(),ListActivity.class);
 				startActivityForResult(myIntent, 0);
 			}
@@ -105,17 +106,11 @@ public class WhatsHappeningActivity extends Activity implements OnTaskCompleteLi
 				e.printStackTrace();
 			}
 			
-			// Mostramos el mensaje de vuelva del servidor...
-			setContentView(R.layout.activity_main);
-
-		    TextView t=new TextView(this); 
-
-		    t=(TextView)findViewById(R.id.main_activity); 
+			TextView t=(TextView)findViewById(R.id.main_activity); 
 		    t.setText(result);
 			
 			// Report about result
-			Toast.makeText(
-					this,result, Toast.LENGTH_LONG).show();
+			Toast.makeText(this,result, Toast.LENGTH_LONG).show();
 
 		}
 	}
