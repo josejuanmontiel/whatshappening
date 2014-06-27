@@ -57,7 +57,7 @@ public class UploadJSONParser {
 			country.put("fileName", fileName);
 			country.put("pathToFile", pathToFile);
 			country.put("upload", R.drawable.blank);
-			country.put("repeated", repeated);
+			country.put("repeated", "Imagen subida: "+repeated+" veces");
 
 		} catch (JSONException e) {
 			e.printStackTrace();
